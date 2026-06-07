@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUsuarios));
             pictureBox1 = new PictureBox();
             label1 = new Label();
             label2 = new Label();
@@ -62,10 +63,10 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.Logo_Cafeteria1;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(12, 12);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(120, 120);
+            pictureBox1.Size = new Size(136, 130);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -75,17 +76,17 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
             label1.ForeColor = Color.Maroon;
-            label1.Location = new Point(138, 12);
+            label1.Location = new Point(154, 9);
             label1.Name = "label1";
-            label1.Size = new Size(291, 41);
+            label1.Size = new Size(273, 41);
             label1.TabIndex = 1;
-            label1.Text = "Cafetería \"Aromas\"";
+            label1.Text = "Librería PrintZone";
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 14F);
-            label2.Location = new Point(138, 90);
+            label2.Location = new Point(154, 91);
             label2.Name = "label2";
             label2.Size = new Size(304, 32);
             label2.TabIndex = 2;

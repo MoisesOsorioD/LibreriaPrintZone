@@ -225,6 +225,7 @@
             btnProductos.Text = "Productos";
             btnProductos.TextAlign = ContentAlignment.MiddleRight;
             btnProductos.UseVisualStyleBackColor = true;
+            btnProductos.Click += btnProductos_Click;
             // 
             // btnCategorias
             // 
@@ -270,6 +271,7 @@
             btnEntradas.Text = "Entradas";
             btnEntradas.TextAlign = ContentAlignment.MiddleRight;
             btnEntradas.UseVisualStyleBackColor = true;
+            btnEntradas.Click += btnEntradas_Click;
             // 
             // btnSalidas
             // 
@@ -300,6 +302,7 @@
             btnUsuarios.Text = "Usuarios";
             btnUsuarios.TextAlign = ContentAlignment.MiddleRight;
             btnUsuarios.UseVisualStyleBackColor = true;
+            btnUsuarios.Click += btnUsuarios_Click;
             // 
             // panel1
             // 

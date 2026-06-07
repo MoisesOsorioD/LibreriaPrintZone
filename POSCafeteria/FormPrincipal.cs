@@ -39,7 +39,25 @@ namespace Printzone
             // Cerrar la sesión actual y volver al formulario de inicio de sesión
             _frmlogin.Show();
             this.Close();
-            
+
+        }
+
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
+            FrmProductos frmProductos = new FrmProductos();
+            frmProductos.ShowDialog();
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            FormUsuarios formUsuarios = new FormUsuarios(_usuarioSesion);
+            formUsuarios.ShowDialog();
+        }
+
+        private void btnEntradas_Click(object sender, EventArgs e)
+        {
+            FormEntradas formEntradas = new FormEntradas();
+            formEntradas.ShowDialog();
         }
     }
 }

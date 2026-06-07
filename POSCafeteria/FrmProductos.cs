@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
+
 namespace Printzone
 {
     public partial class FrmProductos : Form
