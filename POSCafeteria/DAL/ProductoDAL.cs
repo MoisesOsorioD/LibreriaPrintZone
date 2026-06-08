@@ -123,6 +123,7 @@ namespace Printzone.DAL
 
                     producto.id_producto = (int)reader["id_producto"];
                     producto.nombre = reader["nombre"].ToString();
+                    producto.stock_actual = (int)reader["stock_actual"];
 
                     lista.Add(producto);
                 }
@@ -149,6 +150,61 @@ namespace Printzone.DAL
 
                 return comando.ExecuteNonQuery() > 0;
             }
+        }
+
+
+
+
+        public bool DisminuirStock(int idProducto, int cantidadSalida)
+        {
+            using (SqlConnection conexion = ConexionDB.ObtenerConexion())
+            {
+                string consulta = @"UPDATE Productos
+                            SET stock_actual = stock_actual - @cantidad
+                            WHERE id_producto = @idProducto";
+
+                SqlCommand comando = new SqlCommand(consulta, conexion);
+
+                comando.Parameters.AddWithValue("@cantidad", cantidadSalida);
+                comando.Parameters.AddWithValue("@idProducto", idProducto);
+
+                conexion.Open();
+
+                return comando.ExecuteNonQuery() > 0;
+            }
+        }
+
+
+
+        public Producto ObtenerProductoPorId(int idProducto)
+        {
+            Producto producto = null;
+
+            using (SqlConnection conexion = ConexionDB.ObtenerConexion())
+            {
+                string consulta = @"SELECT *
+                            FROM Productos
+                            WHERE id_producto = @idProducto";
+
+                SqlCommand comando = new SqlCommand(consulta, conexion);
+
+                comando.Parameters.AddWithValue("@idProducto", idProducto);
+
+                conexion.Open();
+
+                SqlDataReader reader = comando.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    producto = new Producto();
+
+                    producto.id_producto = (int)reader["id_producto"];
+                    producto.nombre = reader["nombre"].ToString();
+                    producto.stock_actual = (int)reader["stock_actual"];
+                }
+            }
+
+            return producto;
         }
     }
 }

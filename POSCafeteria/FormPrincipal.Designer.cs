@@ -287,6 +287,7 @@
             btnSalidas.Text = "Salidas";
             btnSalidas.TextAlign = ContentAlignment.MiddleRight;
             btnSalidas.UseVisualStyleBackColor = true;
+            btnSalidas.Click += btnSalidas_Click;
             // 
             // btnUsuarios
             // 
