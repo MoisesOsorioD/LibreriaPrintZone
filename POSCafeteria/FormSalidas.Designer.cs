@@ -40,13 +40,20 @@
             label6 = new Label();
             lblUsuario = new Label();
             btnRegistrarSalida = new FontAwesome.Sharp.IconButton();
+            panel1 = new Panel();
+            panel2 = new Panel();
+            pictureBox1 = new PictureBox();
+            label7 = new Label();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(307, 9);
+            label1.Location = new Point(341, 9);
             label1.Name = "label1";
             label1.Size = new Size(465, 41);
             label1.TabIndex = 0;
@@ -56,7 +63,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(121, 117);
+            label2.Location = new Point(40, 44);
             label2.Name = "label2";
             label2.Size = new Size(77, 20);
             label2.TabIndex = 1;
@@ -65,7 +72,7 @@
             // cmbProducto
             // 
             cmbProducto.FormattingEnabled = true;
-            cmbProducto.Location = new Point(121, 154);
+            cmbProducto.Location = new Point(39, 86);
             cmbProducto.Name = "cmbProducto";
             cmbProducto.Size = new Size(215, 28);
             cmbProducto.TabIndex = 2;
@@ -75,7 +82,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(380, 117);
+            label3.Location = new Point(316, 44);
             label3.Name = "label3";
             label3.Size = new Size(127, 20);
             label3.TabIndex = 3;
@@ -84,9 +91,10 @@
             // lblStockActual
             // 
             lblStockActual.AutoSize = true;
-            lblStockActual.Location = new Point(380, 162);
+            lblStockActual.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblStockActual.Location = new Point(316, 89);
             lblStockActual.Name = "lblStockActual";
-            lblStockActual.Size = new Size(18, 20);
+            lblStockActual.Size = new Size(24, 25);
             lblStockActual.TabIndex = 4;
             lblStockActual.Text = "...";
             // 
@@ -94,7 +102,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(660, 117);
+            label4.Location = new Point(536, 44);
             label4.Name = "label4";
             label4.Size = new Size(136, 20);
             label4.TabIndex = 5;
@@ -102,7 +110,7 @@
             // 
             // txtCantidad
             // 
-            txtCantidad.Location = new Point(660, 159);
+            txtCantidad.Location = new Point(536, 90);
             txtCantidad.Name = "txtCantidad";
             txtCantidad.Size = new Size(125, 27);
             txtCantidad.TabIndex = 6;
@@ -111,7 +119,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(122, 282);
+            label5.Location = new Point(40, 224);
             label5.Name = "label5";
             label5.Size = new Size(63, 20);
             label5.TabIndex = 7;
@@ -119,7 +127,7 @@
             // 
             // txtMotivo
             // 
-            txtMotivo.Location = new Point(122, 323);
+            txtMotivo.Location = new Point(40, 265);
             txtMotivo.Name = "txtMotivo";
             txtMotivo.Size = new Size(214, 27);
             txtMotivo.TabIndex = 8;
@@ -128,7 +136,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(380, 282);
+            label6.Location = new Point(316, 224);
             label6.Name = "label6";
             label6.Size = new Size(67, 20);
             label6.TabIndex = 9;
@@ -137,46 +145,95 @@
             // lblUsuario
             // 
             lblUsuario.AutoSize = true;
-            lblUsuario.Location = new Point(380, 330);
+            lblUsuario.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblUsuario.Location = new Point(316, 267);
             lblUsuario.Name = "lblUsuario";
-            lblUsuario.Size = new Size(18, 20);
+            lblUsuario.Size = new Size(24, 25);
             lblUsuario.TabIndex = 10;
             lblUsuario.Text = "...";
             // 
             // btnRegistrarSalida
             // 
-            btnRegistrarSalida.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnRegistrarSalida.IconChar = FontAwesome.Sharp.IconChar.CheckSquare;
             btnRegistrarSalida.IconColor = Color.Black;
             btnRegistrarSalida.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnRegistrarSalida.Location = new Point(629, 321);
+            btnRegistrarSalida.ImageAlign = ContentAlignment.TopCenter;
+            btnRegistrarSalida.Location = new Point(536, 231);
             btnRegistrarSalida.Name = "btnRegistrarSalida";
-            btnRegistrarSalida.Size = new Size(156, 29);
+            btnRegistrarSalida.Size = new Size(121, 64);
             btnRegistrarSalida.TabIndex = 11;
             btnRegistrarSalida.Text = "Registrar salida";
+            btnRegistrarSalida.TextAlign = ContentAlignment.BottomCenter;
             btnRegistrarSalida.UseVisualStyleBackColor = true;
             btnRegistrarSalida.Click += btnRegistrarSalida_Click;
+            // 
+            // panel1
+            // 
+            panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(txtCantidad);
+            panel1.Controls.Add(txtMotivo);
+            panel1.Controls.Add(lblUsuario);
+            panel1.Controls.Add(label5);
+            panel1.Controls.Add(btnRegistrarSalida);
+            panel1.Controls.Add(cmbProducto);
+            panel1.Controls.Add(lblStockActual);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(label6);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(label4);
+            panel1.Location = new Point(341, 76);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(741, 420);
+            panel1.TabIndex = 12;
+            // 
+            // panel2
+            // 
+            panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(pictureBox1);
+            panel2.Controls.Add(label7);
+            panel2.Location = new Point(12, 76);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(323, 420);
+            panel2.TabIndex = 13;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.logo;
+            pictureBox1.Location = new Point(3, 113);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(296, 180);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.Maroon;
+            label7.Location = new Point(26, 28);
+            label7.Name = "label7";
+            label7.Size = new Size(273, 41);
+            label7.TabIndex = 0;
+            label7.Text = "Librería PrintZone";
             // 
             // FormSalidas
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Linen;
-            ClientSize = new Size(1192, 581);
-            Controls.Add(btnRegistrarSalida);
-            Controls.Add(lblUsuario);
-            Controls.Add(label6);
-            Controls.Add(txtMotivo);
-            Controls.Add(label5);
-            Controls.Add(txtCantidad);
-            Controls.Add(label4);
-            Controls.Add(lblStockActual);
-            Controls.Add(label3);
-            Controls.Add(cmbProducto);
-            Controls.Add(label2);
+            ClientSize = new Size(1104, 517);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
             Controls.Add(label1);
             Name = "FormSalidas";
             Text = "FormSalidas";
             Load += FormSalidas_Load;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -195,5 +252,9 @@
         private Label label6;
         private Label lblUsuario;
         private FontAwesome.Sharp.IconButton btnRegistrarSalida;
+        private Panel panel1;
+        private Panel panel2;
+        private Label label7;
+        private PictureBox pictureBox1;
     }
 }

@@ -46,13 +46,20 @@
             txtCodigoBarras = new TextBox();
             txtStockMinimo = new TextBox();
             cmbCategoria = new ComboBox();
+            panel1 = new Panel();
+            panel2 = new Panel();
+            pictureBox1 = new PictureBox();
+            label7 = new Label();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(383, 19);
+            label1.Location = new Point(429, 9);
             label1.Name = "label1";
             label1.Size = new Size(247, 41);
             label1.TabIndex = 0;
@@ -62,7 +69,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(34, 88);
+            label2.Location = new Point(20, 39);
             label2.Name = "label2";
             label2.Size = new Size(71, 20);
             label2.TabIndex = 1;
@@ -72,7 +79,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(276, 93);
+            label3.Location = new Point(268, 39);
             label3.Name = "label3";
             label3.Size = new Size(94, 20);
             label3.TabIndex = 2;
@@ -82,7 +89,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(605, 93);
+            label4.Location = new Point(526, 39);
             label4.Name = "label4";
             label4.Size = new Size(56, 20);
             label4.TabIndex = 3;
@@ -92,7 +99,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(34, 236);
+            label5.Location = new Point(20, 186);
             label5.Name = "label5";
             label5.Size = new Size(134, 20);
             label5.TabIndex = 4;
@@ -102,7 +109,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(276, 236);
+            label6.Location = new Point(268, 186);
             label6.Name = "label6";
             label6.Size = new Size(120, 20);
             label6.TabIndex = 5;
@@ -112,7 +119,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(605, 236);
+            label8.Location = new Point(526, 186);
             label8.Name = "label8";
             label8.Size = new Size(131, 20);
             label8.TabIndex = 7;
@@ -122,7 +129,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.Location = new Point(34, 369);
+            label9.Location = new Point(20, 329);
             label9.Name = "label9";
             label9.Size = new Size(109, 20);
             label9.TabIndex = 8;
@@ -132,7 +139,7 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.Location = new Point(282, 369);
+            label10.Location = new Point(268, 329);
             label10.Name = "label10";
             label10.Size = new Size(80, 20);
             label10.TabIndex = 9;
@@ -140,73 +147,131 @@
             // 
             // btnGuardar
             // 
-            btnGuardar.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnGuardar.IconChar = FontAwesome.Sharp.IconChar.CheckSquare;
             btnGuardar.IconColor = Color.Black;
             btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnGuardar.Location = new Point(664, 409);
+            btnGuardar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnGuardar.Location = new Point(526, 341);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(94, 37);
+            btnGuardar.Size = new Size(116, 50);
             btnGuardar.TabIndex = 10;
             btnGuardar.Text = "Guardar";
+            btnGuardar.TextAlign = ContentAlignment.MiddleRight;
             btnGuardar.UseVisualStyleBackColor = true;
             btnGuardar.Click += btnGuardar_Click;
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(34, 129);
+            txtNombre.Location = new Point(20, 72);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(153, 27);
+            txtNombre.Size = new Size(185, 27);
             txtNombre.TabIndex = 11;
             // 
             // txtDescripcion
             // 
-            txtDescripcion.Location = new Point(282, 129);
+            txtDescripcion.Location = new Point(268, 72);
             txtDescripcion.Name = "txtDescripcion";
-            txtDescripcion.Size = new Size(153, 27);
+            txtDescripcion.Size = new Size(185, 27);
             txtDescripcion.TabIndex = 12;
             // 
             // txtMarca
             // 
-            txtMarca.Location = new Point(605, 129);
+            txtMarca.Location = new Point(526, 72);
             txtMarca.Name = "txtMarca";
-            txtMarca.Size = new Size(153, 27);
+            txtMarca.Size = new Size(185, 27);
             txtMarca.TabIndex = 13;
             // 
             // txtPrecioCompra
             // 
-            txtPrecioCompra.Location = new Point(34, 271);
+            txtPrecioCompra.Location = new Point(20, 221);
             txtPrecioCompra.Name = "txtPrecioCompra";
-            txtPrecioCompra.Size = new Size(153, 27);
+            txtPrecioCompra.Size = new Size(185, 27);
             txtPrecioCompra.TabIndex = 14;
             // 
             // txtPrecioVenta
             // 
-            txtPrecioVenta.Location = new Point(276, 271);
+            txtPrecioVenta.Location = new Point(268, 221);
             txtPrecioVenta.Name = "txtPrecioVenta";
-            txtPrecioVenta.Size = new Size(153, 27);
+            txtPrecioVenta.Size = new Size(185, 27);
             txtPrecioVenta.TabIndex = 15;
             // 
             // txtCodigoBarras
             // 
-            txtCodigoBarras.Location = new Point(605, 271);
+            txtCodigoBarras.Location = new Point(526, 221);
             txtCodigoBarras.Name = "txtCodigoBarras";
-            txtCodigoBarras.Size = new Size(153, 27);
+            txtCodigoBarras.Size = new Size(185, 27);
             txtCodigoBarras.TabIndex = 16;
             // 
             // txtStockMinimo
             // 
-            txtStockMinimo.Location = new Point(34, 419);
+            txtStockMinimo.Location = new Point(20, 364);
             txtStockMinimo.Name = "txtStockMinimo";
-            txtStockMinimo.Size = new Size(153, 27);
+            txtStockMinimo.Size = new Size(185, 27);
             txtStockMinimo.TabIndex = 18;
             // 
             // cmbCategoria
             // 
             cmbCategoria.FormattingEnabled = true;
-            cmbCategoria.Location = new Point(276, 418);
+            cmbCategoria.Location = new Point(268, 363);
             cmbCategoria.Name = "cmbCategoria";
-            cmbCategoria.Size = new Size(153, 28);
+            cmbCategoria.Size = new Size(185, 28);
             cmbCategoria.TabIndex = 19;
+            // 
+            // panel1
+            // 
+            panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(txtStockMinimo);
+            panel1.Controls.Add(cmbCategoria);
+            panel1.Controls.Add(label9);
+            panel1.Controls.Add(txtPrecioCompra);
+            panel1.Controls.Add(txtMarca);
+            panel1.Controls.Add(txtNombre);
+            panel1.Controls.Add(label5);
+            panel1.Controls.Add(btnGuardar);
+            panel1.Controls.Add(txtPrecioVenta);
+            panel1.Controls.Add(txtCodigoBarras);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(label10);
+            panel1.Controls.Add(label8);
+            panel1.Controls.Add(txtDescripcion);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(label6);
+            panel1.Location = new Point(336, 82);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(742, 428);
+            panel1.TabIndex = 20;
+            // 
+            // panel2
+            // 
+            panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(label7);
+            panel2.Controls.Add(pictureBox1);
+            panel2.Location = new Point(12, 82);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(318, 428);
+            panel2.TabIndex = 21;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.logo;
+            pictureBox1.Location = new Point(51, 116);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(210, 180);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.Maroon;
+            label7.Location = new Point(29, 18);
+            label7.Name = "label7";
+            label7.Size = new Size(273, 41);
+            label7.TabIndex = 1;
+            label7.Text = "Librería PrintZone";
             // 
             // FormNuevoProducto
             // 
@@ -214,27 +279,17 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Linen;
             ClientSize = new Size(1100, 526);
-            Controls.Add(cmbCategoria);
-            Controls.Add(txtStockMinimo);
-            Controls.Add(txtCodigoBarras);
-            Controls.Add(txtPrecioVenta);
-            Controls.Add(txtPrecioCompra);
-            Controls.Add(txtMarca);
-            Controls.Add(txtDescripcion);
-            Controls.Add(txtNombre);
-            Controls.Add(btnGuardar);
-            Controls.Add(label10);
-            Controls.Add(label9);
-            Controls.Add(label8);
-            Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
             Controls.Add(label1);
             Name = "FormNuevoProducto";
             Text = "FormNuevoProducto";
             Load += FormNuevoProducto_Load;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -259,5 +314,9 @@
         private TextBox txtCodigoBarras;
         private TextBox txtStockMinimo;
         private ComboBox cmbCategoria;
+        private Panel panel1;
+        private Panel panel2;
+        private Label label7;
+        private PictureBox pictureBox1;
     }
 }

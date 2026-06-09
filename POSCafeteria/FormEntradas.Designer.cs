@@ -40,14 +40,19 @@
             label5 = new Label();
             btnNuevoProducto = new FontAwesome.Sharp.IconButton();
             btnRegistrar = new FontAwesome.Sharp.IconButton();
+            pictureBox1 = new PictureBox();
+            panel2 = new Panel();
+            label6 = new Label();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(296, 30);
+            label1.Location = new Point(222, 9);
             label1.Name = "label1";
             label1.Size = new Size(492, 41);
             label1.TabIndex = 0;
@@ -56,24 +61,24 @@
             // cmbProveedor
             // 
             cmbProveedor.FormattingEnabled = true;
-            cmbProveedor.Location = new Point(25, 57);
+            cmbProveedor.Location = new Point(25, 70);
             cmbProveedor.Name = "cmbProveedor";
-            cmbProveedor.Size = new Size(237, 28);
+            cmbProveedor.Size = new Size(279, 28);
             cmbProveedor.TabIndex = 1;
             // 
             // cmbProducto
             // 
             cmbProducto.FormattingEnabled = true;
-            cmbProducto.Location = new Point(297, 56);
+            cmbProducto.Location = new Point(25, 187);
             cmbProducto.Name = "cmbProducto";
-            cmbProducto.Size = new Size(237, 28);
+            cmbProducto.Size = new Size(279, 28);
             cmbProducto.TabIndex = 2;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(563, 11);
+            label2.Location = new Point(401, 26);
             label2.Name = "label2";
             label2.Size = new Size(75, 20);
             label2.TabIndex = 3;
@@ -81,7 +86,7 @@
             // 
             // txtCantidad
             // 
-            txtCantidad.Location = new Point(563, 57);
+            txtCantidad.Location = new Point(401, 71);
             txtCantidad.Name = "txtCantidad";
             txtCantidad.Size = new Size(125, 27);
             txtCantidad.TabIndex = 4;
@@ -90,7 +95,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(25, 11);
+            label3.Location = new Point(25, 26);
             label3.Name = "label3";
             label3.Size = new Size(86, 20);
             label3.TabIndex = 5;
@@ -100,7 +105,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(297, 11);
+            label4.Location = new Point(25, 150);
             label4.Name = "label4";
             label4.Size = new Size(77, 20);
             label4.TabIndex = 6;
@@ -119,14 +124,14 @@
             panel1.Controls.Add(cmbProveedor);
             panel1.Controls.Add(txtCantidad);
             panel1.Controls.Add(cmbProducto);
-            panel1.Location = new Point(149, 118);
+            panel1.Location = new Point(328, 85);
             panel1.Name = "panel1";
-            panel1.Size = new Size(916, 245);
+            panel1.Size = new Size(630, 413);
             panel1.TabIndex = 7;
             // 
             // txtCostoLote
             // 
-            txtCostoLote.Location = new Point(744, 57);
+            txtCostoLote.Location = new Point(401, 187);
             txtCostoLote.Name = "txtCostoLote";
             txtCostoLote.Size = new Size(125, 27);
             txtCostoLote.TabIndex = 10;
@@ -135,7 +140,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(744, 11);
+            label5.Location = new Point(401, 150);
             label5.Name = "label5";
             label5.Size = new Size(108, 20);
             label5.TabIndex = 9;
@@ -143,36 +148,72 @@
             // 
             // btnNuevoProducto
             // 
-            btnNuevoProducto.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnNuevoProducto.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
             btnNuevoProducto.IconColor = Color.Black;
             btnNuevoProducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnNuevoProducto.Location = new Point(251, 162);
+            btnNuevoProducto.ImageAlign = ContentAlignment.TopCenter;
+            btnNuevoProducto.Location = new Point(310, 303);
             btnNuevoProducto.Name = "btnNuevoProducto";
-            btnNuevoProducto.Size = new Size(163, 36);
+            btnNuevoProducto.Size = new Size(127, 65);
             btnNuevoProducto.TabIndex = 8;
             btnNuevoProducto.Text = "Nuevo Producto";
+            btnNuevoProducto.TextAlign = ContentAlignment.BottomCenter;
             btnNuevoProducto.UseVisualStyleBackColor = true;
             btnNuevoProducto.Click += btnNuevoProducto_Click;
             // 
             // btnRegistrar
             // 
-            btnRegistrar.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnRegistrar.IconChar = FontAwesome.Sharp.IconChar.CheckSquare;
             btnRegistrar.IconColor = Color.Black;
             btnRegistrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnRegistrar.Location = new Point(451, 162);
+            btnRegistrar.ImageAlign = ContentAlignment.TopCenter;
+            btnRegistrar.Location = new Point(173, 303);
             btnRegistrar.Name = "btnRegistrar";
-            btnRegistrar.Size = new Size(151, 36);
+            btnRegistrar.Size = new Size(131, 65);
             btnRegistrar.TabIndex = 7;
             btnRegistrar.Text = "Registrar entrada";
+            btnRegistrar.TextAlign = ContentAlignment.BottomCenter;
             btnRegistrar.UseVisualStyleBackColor = true;
             btnRegistrar.Click += btnRegistrar_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.logo;
+            pictureBox1.Location = new Point(51, 115);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(180, 141);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 8;
+            pictureBox1.TabStop = false;
+            // 
+            // panel2
+            // 
+            panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(label6);
+            panel2.Controls.Add(pictureBox1);
+            panel2.Location = new Point(12, 85);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(306, 413);
+            panel2.TabIndex = 9;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.Maroon;
+            label6.Location = new Point(17, 9);
+            label6.Name = "label6";
+            label6.Size = new Size(273, 41);
+            label6.TabIndex = 9;
+            label6.Text = "Librería PrintZone";
             // 
             // FormEntradas
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Linen;
-            ClientSize = new Size(1202, 578);
+            ClientSize = new Size(979, 578);
+            Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(label1);
             Name = "FormEntradas";
@@ -180,6 +221,9 @@
             Load += FormEntradas_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -198,5 +242,8 @@
         private FontAwesome.Sharp.IconButton btnNuevoProducto;
         private TextBox txtCostoLote;
         private Label label5;
+        private PictureBox pictureBox1;
+        private Panel panel2;
+        private Label label6;
     }
 }
