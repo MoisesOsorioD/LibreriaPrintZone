@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
-using Printzone.DAL;
 using Printzone.BLL;
 using Printzone.Entidades;
 
@@ -47,45 +41,76 @@ namespace Printzone
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            Entrada entrada = new Entrada();
-
-            entrada.cantidad = Convert.ToInt32(txtCantidad.Text);
-            entrada.costo_lote = Convert.ToDecimal(txtCostoLote.Text);
-
-            entrada.id_proveedor = Convert.ToInt32(cmbProveedor.SelectedValue);
-            entrada.id_producto = Convert.ToInt32(cmbProducto.SelectedValue);
-
-            EntradaDAL entradaDAL = new EntradaDAL();
-
-            bool resultadoEntrada = entradaDAL.RegistrarEntrada(entrada);
-
-            if (resultadoEntrada)
+            try
             {
-                ProductoBLL productoBLL = new ProductoBLL();
+                Entrada entrada = new Entrada();
 
-                bool resultadoStock = productoBLL.ActualizarStock(
-                    entrada.id_producto,
-                    entrada.cantidad
-                );
+                entrada.cantidad = Convert.ToInt32(txtCantidad.Text);
+                entrada.costo_lote = Convert.ToDecimal(txtCostoLote.Text);
 
-                if (resultadoStock)
+                entrada.id_proveedor = Convert.ToInt32(cmbProveedor.SelectedValue);
+                entrada.id_producto = Convert.ToInt32(cmbProducto.SelectedValue);
+
+                EntradaBLL entradaBLL = new EntradaBLL();
+
+                bool resultadoEntrada = entradaBLL.RegistrarEntrada(entrada);
+
+                if (resultadoEntrada)
                 {
-                    MessageBox.Show("Entrada registrada correctamente.");
+                    ProductoBLL productoBLL = new ProductoBLL();
 
-                    txtCantidad.Clear();
-                    txtCostoLote.Clear();
+                    bool resultadoStock = productoBLL.ActualizarStock(
+                        entrada.id_producto,
+                        entrada.cantidad
+                    );
 
-                    cmbProveedor.SelectedIndex = 0;
-                    cmbProducto.SelectedIndex = 0;
+                    if (resultadoStock)
+                    {
+                        MessageBox.Show(
+                            "Entrada registrada correctamente.",
+                            "Información",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+
+                        txtCantidad.Clear();
+                        txtCostoLote.Clear();
+
+                        cmbProveedor.SelectedIndex = 0;
+                        cmbProducto.SelectedIndex = 0;
+                    }
+                    else
+                    {
+                        MessageBox.Show(
+                            "La entrada se registró, pero no se actualizó el stock.",
+                            "Advertencia",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("La entrada se registró, pero no se actualizó el stock.");
+                    MessageBox.Show(
+                        "No se pudo registrar la entrada.",
+                        "Error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
                 }
             }
-            else
+            catch (FormatException)
             {
-                MessageBox.Show("No se pudo registrar la entrada.");
+                MessageBox.Show(
+                    "Debe ingresar valores válidos.",
+                    "Validación",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    ex.Message,
+                    "Validación",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
             }
         }
 

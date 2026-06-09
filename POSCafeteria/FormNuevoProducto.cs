@@ -3,10 +3,6 @@ using Printzone.DAL;
 using Printzone.Entidades;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Printzone
@@ -21,6 +17,7 @@ namespace Printzone
         private void CargarCategorias()
         {
             CategoriaDAL categoriaDAL = new CategoriaDAL();
+
             List<Categoria> categorias = categoriaDAL.ObtenerCategorias();
 
             cmbCategoria.DataSource = categorias;
@@ -35,31 +32,71 @@ namespace Printzone
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            Producto producto = new Producto();
-
-            producto.nombre = txtNombre.Text;
-            producto.descripcion = txtDescripcion.Text;
-            producto.marca = txtMarca.Text;
-
-            producto.precio_compra = Convert.ToDecimal(txtPrecioCompra.Text);
-            producto.precio_venta = Convert.ToDecimal(txtPrecioVenta.Text);
-
-            producto.codigo_barras = txtCodigoBarras.Text;
-
-            producto.stock_minimo = Convert.ToInt32(txtStockMinimo.Text);
-
-            producto.id_categoria = Convert.ToInt32(cmbCategoria.SelectedValue);
-
-            ProductoBLL productoBLL = new ProductoBLL();
-
-            bool resultado = productoBLL.GuardarProducto(producto);
-            if (resultado)
+            try
             {
-                MessageBox.Show("Producto registrado correctamente.");
+                Producto producto = new Producto();
+
+                producto.nombre = txtNombre.Text;
+                producto.descripcion = txtDescripcion.Text;
+                producto.marca = txtMarca.Text;
+
+                producto.precio_compra = Convert.ToDecimal(txtPrecioCompra.Text);
+                producto.precio_venta = Convert.ToDecimal(txtPrecioVenta.Text);
+
+                producto.codigo_barras = txtCodigoBarras.Text;
+
+                producto.stock_minimo = Convert.ToInt32(txtStockMinimo.Text);
+
+                producto.id_categoria = Convert.ToInt32(cmbCategoria.SelectedValue);
+
+                ProductoBLL productoBLL = new ProductoBLL();
+
+                bool resultado = productoBLL.GuardarProducto(producto);
+
+                if (resultado)
+                {
+                    MessageBox.Show(
+                        "Producto registrado correctamente.",
+                        "Información",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+
+                    txtNombre.Clear();
+                    txtDescripcion.Clear();
+                    txtMarca.Clear();
+                    txtPrecioCompra.Clear();
+                    txtPrecioVenta.Clear();
+                    txtCodigoBarras.Clear();
+                    txtStockMinimo.Clear();
+
+                    cmbCategoria.SelectedIndex = 0;
+
+                    txtNombre.Focus();
+                }
+                else
+                {
+                    MessageBox.Show(
+                        "No se pudo registrar el producto.",
+                        "Error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
             }
-            else
+            catch (FormatException)
             {
-                MessageBox.Show("No se pudo registrar el producto.");
+                MessageBox.Show(
+                    "Debe ingresar valores numéricos válidos.",
+                    "Validación",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    ex.Message,
+                    "Validación",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
             }
         }
     }

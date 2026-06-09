@@ -43,6 +43,12 @@ namespace Printzone.BLL
                 throw new ArgumentException("El precio de venta debe ser mayor que cero.");
             }
 
+            if (producto.precio_venta < producto.precio_compra)
+            {
+                throw new ArgumentException(
+                    "El precio de venta no puede ser menor que el precio de compra.");
+            }
+
             if (producto.stock_minimo < 0)
             {
                 throw new ArgumentException("El stock mínimo no puede ser negativo.");
