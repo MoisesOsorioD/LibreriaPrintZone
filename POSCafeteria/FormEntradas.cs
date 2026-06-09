@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 
 using Printzone.DAL;
+using Printzone.BLL;
 using Printzone.Entidades;
 
 namespace Printzone
@@ -20,9 +21,9 @@ namespace Printzone
 
         private void CargarProveedores()
         {
-            ProveedorDAL proveedorDAL = new ProveedorDAL();
+            ProveedorBLL proveedorBLL = new ProveedorBLL();
 
-            cmbProveedor.DataSource = proveedorDAL.ObtenerProveedores();
+            cmbProveedor.DataSource = proveedorBLL.ObtenerProveedores();
 
             cmbProveedor.DisplayMember = "nombre_empresa";
             cmbProveedor.ValueMember = "id_proveedor";
@@ -30,9 +31,9 @@ namespace Printzone
 
         private void CargarProductos()
         {
-            ProductoDAL productoDAL = new ProductoDAL();
+            ProductoBLL productoBLL = new ProductoBLL();
 
-            cmbProducto.DataSource = productoDAL.ObtenerProductos();
+            cmbProducto.DataSource = productoBLL.ObtenerProductos();
 
             cmbProducto.DisplayMember = "nombre";
             cmbProducto.ValueMember = "id_producto";
@@ -60,9 +61,9 @@ namespace Printzone
 
             if (resultadoEntrada)
             {
-                ProductoDAL productoDAL = new ProductoDAL();
+                ProductoBLL productoBLL = new ProductoBLL();
 
-                bool resultadoStock = productoDAL.ActualizarStock(
+                bool resultadoStock = productoBLL.ActualizarStock(
                     entrada.id_producto,
                     entrada.cantidad
                 );
@@ -70,6 +71,12 @@ namespace Printzone
                 if (resultadoStock)
                 {
                     MessageBox.Show("Entrada registrada correctamente.");
+
+                    txtCantidad.Clear();
+                    txtCostoLote.Clear();
+
+                    cmbProveedor.SelectedIndex = 0;
+                    cmbProducto.SelectedIndex = 0;
                 }
                 else
                 {
@@ -87,6 +94,7 @@ namespace Printzone
             FormNuevoProducto formNuevoProducto = new FormNuevoProducto();
             formNuevoProducto.ShowDialog();
 
+            CargarProductos();
         }
     }
 }

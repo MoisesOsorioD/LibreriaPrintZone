@@ -8,53 +8,6 @@ namespace Printzone.DAL
 {
     public class ProductoDAL
     {
-        public bool GuardarProducto(Producto producto)
-        {
-            using (SqlConnection conexion = ConexionDB.ObtenerConexion())
-            {
-                string consulta = @"INSERT INTO Productos
-                           (
-                               nombre,
-                               descripcion,
-                               marca,
-                               precio_compra,
-                               precio_venta,
-                               codigo_barras,
-                               stock_actual,
-                               stock_minimo,
-                               id_categoria
-                           )
-                           VALUES
-                           (
-                               @nombre,
-                               @descripcion,
-                               @marca,
-                               @precio_compra,
-                               @precio_venta,
-                               @codigo_barras,
-                               @stock_actual,
-                               @stock_minimo,
-                               @id_categoria
-                           )";
-
-                SqlCommand comando = new SqlCommand(consulta, conexion);
-
-                comando.Parameters.AddWithValue("@nombre", producto.nombre);
-                comando.Parameters.AddWithValue("@descripcion", producto.descripcion);
-                comando.Parameters.AddWithValue("@marca", producto.marca);
-                comando.Parameters.AddWithValue("@precio_compra", producto.precio_compra);
-                comando.Parameters.AddWithValue("@precio_venta", producto.precio_venta);
-                comando.Parameters.AddWithValue("@codigo_barras", producto.codigo_barras);
-                comando.Parameters.AddWithValue("@stock_actual", producto.stock_actual);
-                comando.Parameters.AddWithValue("@stock_minimo", producto.stock_minimo);
-                comando.Parameters.AddWithValue("@id_categoria", producto.id_categoria);
-
-                conexion.Open();
-
-                return comando.ExecuteNonQuery() > 0;
-            }
-        }
-
 
         public bool InsertarProducto(Producto producto)
         {

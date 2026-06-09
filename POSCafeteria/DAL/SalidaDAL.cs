@@ -8,14 +8,14 @@ namespace Printzone.DAL
 {
     public class SalidaDAL
     {
-        public void RegistrarSalida(Salida salida)
+        public bool RegistrarSalida(Salida salida)
         {
             using (SqlConnection conexion = ConexionDB.ObtenerConexion())
             {
                 string consulta = @"INSERT INTO Salidas
-                           (cantidad, motivo, id_usuario, id_producto)
-                           VALUES
-                           (@cantidad, @motivo, @id_usuario, @id_producto)";
+                   (cantidad, motivo, id_usuario, id_producto)
+                   VALUES
+                   (@cantidad, @motivo, @id_usuario, @id_producto)";
 
                 SqlCommand comando = new SqlCommand(consulta, conexion);
 
@@ -25,7 +25,8 @@ namespace Printzone.DAL
                 comando.Parameters.AddWithValue("@id_producto", salida.id_producto);
 
                 conexion.Open();
-                comando.ExecuteNonQuery();
+
+                return comando.ExecuteNonQuery() > 0;
             }
         }
     }

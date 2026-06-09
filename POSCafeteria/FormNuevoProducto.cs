@@ -1,12 +1,13 @@
-﻿using System;
+﻿using Printzone.BLL;
+using Printzone.DAL;
+using Printzone.Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using Printzone.DAL;
-using Printzone.Entidades;
 
 namespace Printzone
 {
@@ -49,9 +50,9 @@ namespace Printzone
 
             producto.id_categoria = Convert.ToInt32(cmbCategoria.SelectedValue);
 
-            ProductoDAL productoDAL = new ProductoDAL();
+            ProductoBLL productoBLL = new ProductoBLL();
 
-            bool resultado = productoDAL.InsertarProducto(producto);
+            bool resultado = productoBLL.GuardarProducto(producto);
             if (resultado)
             {
                 MessageBox.Show("Producto registrado correctamente.");
