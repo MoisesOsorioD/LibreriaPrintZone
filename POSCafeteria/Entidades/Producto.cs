@@ -25,5 +25,9 @@ namespace Printzone.Entidades
         public int stock_minimo { get; set; }
 
         public int id_categoria { get; set; }
+
+        public bool activo { get; set; }
+
+
     }
 }

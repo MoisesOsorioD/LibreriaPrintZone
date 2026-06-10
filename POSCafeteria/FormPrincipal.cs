@@ -62,8 +62,13 @@ namespace Printzone
 
         private void btnSalidas_Click(object sender, EventArgs e)
         {
-            FormSalidas formSalidas = new FormSalidas(_usuarioSesion);
-            formSalidas.ShowDialog();
+            FormSalidas frmSalidas = new FormSalidas(_usuarioSesion, this);
+
+            this.Hide();
+
+            frmSalidas.ShowDialog();
+
+            this.Show();
         }
     }
 }

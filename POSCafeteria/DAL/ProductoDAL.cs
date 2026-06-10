@@ -62,7 +62,9 @@ namespace Printzone.DAL
 
             using (SqlConnection conexion = ConexionDB.ObtenerConexion())
             {
-                string consulta = "SELECT * FROM Productos";
+                string consulta = @"SELECT *
+                    FROM Productos
+                    WHERE activo = 1";
 
                 SqlCommand comando = new SqlCommand(consulta, conexion);
 
@@ -76,7 +78,15 @@ namespace Printzone.DAL
 
                     producto.id_producto = (int)reader["id_producto"];
                     producto.nombre = reader["nombre"].ToString();
+                    producto.descripcion = reader["descripcion"].ToString();
+                    producto.marca = reader["marca"].ToString();
+                    producto.precio_compra = Convert.ToDecimal(reader["precio_compra"]);
+                    producto.precio_venta = Convert.ToDecimal(reader["precio_venta"]);
+                    producto.codigo_barras = reader["codigo_barras"].ToString();
                     producto.stock_actual = (int)reader["stock_actual"];
+                    producto.stock_minimo = (int)reader["stock_minimo"];
+                    producto.id_categoria = (int)reader["id_categoria"];
+                    producto.activo = (bool)reader["activo"];
 
                     lista.Add(producto);
                 }
@@ -136,8 +146,9 @@ namespace Printzone.DAL
             using (SqlConnection conexion = ConexionDB.ObtenerConexion())
             {
                 string consulta = @"SELECT *
-                            FROM Productos
-                            WHERE id_producto = @idProducto";
+                    FROM Productos
+                    WHERE id_producto = @idProducto
+                    AND activo = 1";
 
                 SqlCommand comando = new SqlCommand(consulta, conexion);
 
@@ -153,11 +164,74 @@ namespace Printzone.DAL
 
                     producto.id_producto = (int)reader["id_producto"];
                     producto.nombre = reader["nombre"].ToString();
+                    producto.descripcion = reader["descripcion"].ToString();
+                    producto.marca = reader["marca"].ToString();
+                    producto.precio_compra = Convert.ToDecimal(reader["precio_compra"]);
+                    producto.precio_venta = Convert.ToDecimal(reader["precio_venta"]);
+                    producto.codigo_barras = reader["codigo_barras"].ToString();
                     producto.stock_actual = (int)reader["stock_actual"];
+                    producto.stock_minimo = (int)reader["stock_minimo"];
+                    producto.id_categoria = (int)reader["id_categoria"];
+                    producto.activo = (bool)reader["activo"];
                 }
             }
 
             return producto;
+        }
+
+
+
+        public bool ActualizarProducto(Producto producto)
+        {
+            using (SqlConnection conexion = ConexionDB.ObtenerConexion())
+            {
+                string consulta = @"UPDATE Productos
+                            SET nombre = @nombre,
+                                descripcion = @descripcion,
+                                marca = @marca,
+                                precio_compra = @precio_compra,
+                                precio_venta = @precio_venta,
+                                codigo_barras = @codigo_barras,
+                                stock_minimo = @stock_minimo,
+                                id_categoria = @id_categoria
+                            WHERE id_producto = @id_producto";
+
+                SqlCommand comando = new SqlCommand(consulta, conexion);
+
+                comando.Parameters.AddWithValue("@id_producto", producto.id_producto);
+                comando.Parameters.AddWithValue("@nombre", producto.nombre);
+                comando.Parameters.AddWithValue("@descripcion", producto.descripcion);
+                comando.Parameters.AddWithValue("@marca", producto.marca);
+                comando.Parameters.AddWithValue("@precio_compra", producto.precio_compra);
+                comando.Parameters.AddWithValue("@precio_venta", producto.precio_venta);
+                comando.Parameters.AddWithValue("@codigo_barras", producto.codigo_barras);
+                comando.Parameters.AddWithValue("@stock_minimo", producto.stock_minimo);
+                comando.Parameters.AddWithValue("@id_categoria", producto.id_categoria);
+
+                conexion.Open();
+
+                return comando.ExecuteNonQuery() > 0;
+            }
+        }
+
+
+
+        public bool EliminarProducto(int idProducto)
+        {
+            using (SqlConnection conexion = ConexionDB.ObtenerConexion())
+            {
+                string consulta = @"UPDATE Productos
+                            SET activo = 0
+                            WHERE id_producto = @idProducto";
+
+                SqlCommand comando = new SqlCommand(consulta, conexion);
+
+                comando.Parameters.AddWithValue("@idProducto", idProducto);
+
+                conexion.Open();
+
+                return comando.ExecuteNonQuery() > 0;
+            }
         }
     }
 }

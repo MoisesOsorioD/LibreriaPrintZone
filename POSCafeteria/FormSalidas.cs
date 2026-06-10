@@ -8,11 +8,13 @@ namespace Printzone
     public partial class FormSalidas : Form
     {
         private Usuario _usuarioSesion;
+        private FormPrincipal _frmPrincipal;
 
-        public FormSalidas(Usuario usuario)
+        public FormSalidas(Usuario usuario, FormPrincipal frmPrincipal)
         {
             InitializeComponent();
             _usuarioSesion = usuario;
+            _frmPrincipal = frmPrincipal;
         }
 
         private void CargarProductos()
@@ -128,6 +130,11 @@ namespace Printzone
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
             }
+        }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

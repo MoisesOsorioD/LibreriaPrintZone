@@ -44,6 +44,7 @@
             panel2 = new Panel();
             pictureBox1 = new PictureBox();
             label7 = new Label();
+            btnRegresar = new FontAwesome.Sharp.IconButton();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -217,12 +218,26 @@
             label7.TabIndex = 0;
             label7.Text = "Librería PrintZone";
             // 
+            // btnRegresar
+            // 
+            btnRegresar.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnRegresar.IconColor = Color.Black;
+            btnRegresar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnRegresar.Location = new Point(988, 21);
+            btnRegresar.Name = "btnRegresar";
+            btnRegresar.Size = new Size(94, 29);
+            btnRegresar.TabIndex = 14;
+            btnRegresar.Text = "Regresar";
+            btnRegresar.UseVisualStyleBackColor = true;
+            btnRegresar.Click += btnRegresar_Click;
+            // 
             // FormSalidas
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Linen;
             ClientSize = new Size(1104, 517);
+            Controls.Add(btnRegresar);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(label1);
@@ -256,5 +271,6 @@
         private Panel panel2;
         private Label label7;
         private PictureBox pictureBox1;
+        private FontAwesome.Sharp.IconButton btnRegresar;
     }
 }
