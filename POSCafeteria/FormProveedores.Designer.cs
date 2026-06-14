@@ -32,30 +32,31 @@
             label1 = new Label();
             label2 = new Label();
             panel1 = new Panel();
-            textBox7 = new TextBox();
+            txtMontoMinimoCompra = new TextBox();
             label10 = new Label();
-            textBox6 = new TextBox();
-            textBox5 = new TextBox();
+            txtTelefonoAgente = new TextBox();
+            txtNombreAgente = new TextBox();
             label9 = new Label();
             label8 = new Label();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
+            txtTelefono = new TextBox();
+            txtCorreo = new TextBox();
             label7 = new Label();
             label6 = new Label();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            txtDireccion = new TextBox();
+            txtNombreEmpresa = new TextBox();
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
             panel2 = new Panel();
-            iconButton2 = new FontAwesome.Sharp.IconButton();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
+            btnActualizar = new FontAwesome.Sharp.IconButton();
+            btnEliminar = new FontAwesome.Sharp.IconButton();
+            btnGuardar = new FontAwesome.Sharp.IconButton();
             label11 = new Label();
-            dataGridView1 = new DataGridView();
+            dgvProveedores = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvProveedores).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -91,18 +92,18 @@
             // panel1
             // 
             panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Controls.Add(textBox7);
+            panel1.Controls.Add(txtMontoMinimoCompra);
             panel1.Controls.Add(label10);
-            panel1.Controls.Add(textBox6);
-            panel1.Controls.Add(textBox5);
+            panel1.Controls.Add(txtTelefonoAgente);
+            panel1.Controls.Add(txtNombreAgente);
             panel1.Controls.Add(label9);
             panel1.Controls.Add(label8);
-            panel1.Controls.Add(textBox4);
-            panel1.Controls.Add(textBox3);
+            panel1.Controls.Add(txtTelefono);
+            panel1.Controls.Add(txtCorreo);
             panel1.Controls.Add(label7);
             panel1.Controls.Add(label6);
-            panel1.Controls.Add(textBox2);
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(txtDireccion);
+            panel1.Controls.Add(txtNombreEmpresa);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
@@ -111,12 +112,12 @@
             panel1.Size = new Size(306, 600);
             panel1.TabIndex = 3;
             // 
-            // textBox7
+            // txtMontoMinimoCompra
             // 
-            textBox7.Location = new Point(22, 535);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(236, 27);
-            textBox7.TabIndex = 14;
+            txtMontoMinimoCompra.Location = new Point(22, 535);
+            txtMontoMinimoCompra.Name = "txtMontoMinimoCompra";
+            txtMontoMinimoCompra.Size = new Size(236, 27);
+            txtMontoMinimoCompra.TabIndex = 14;
             // 
             // label10
             // 
@@ -128,19 +129,19 @@
             label10.TabIndex = 13;
             label10.Text = "Monto minimo de compra:";
             // 
-            // textBox6
+            // txtTelefonoAgente
             // 
-            textBox6.Location = new Point(22, 461);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(236, 27);
-            textBox6.TabIndex = 12;
+            txtTelefonoAgente.Location = new Point(22, 461);
+            txtTelefonoAgente.Name = "txtTelefonoAgente";
+            txtTelefonoAgente.Size = new Size(236, 27);
+            txtTelefonoAgente.TabIndex = 12;
             // 
-            // textBox5
+            // txtNombreAgente
             // 
-            textBox5.Location = new Point(22, 389);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(236, 27);
-            textBox5.TabIndex = 11;
+            txtNombreAgente.Location = new Point(22, 389);
+            txtNombreAgente.Name = "txtNombreAgente";
+            txtNombreAgente.Size = new Size(236, 27);
+            txtNombreAgente.TabIndex = 11;
             // 
             // label9
             // 
@@ -148,9 +149,9 @@
             label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label9.Location = new Point(21, 438);
             label9.Name = "label9";
-            label9.Size = new Size(126, 20);
+            label9.Size = new Size(151, 20);
             label9.TabIndex = 10;
-            label9.Text = "Teléfono agente:";
+            label9.Text = "Teléfono del agente:";
             // 
             // label8
             // 
@@ -158,23 +159,23 @@
             label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label8.Location = new Point(21, 366);
             label8.Name = "label8";
-            label8.Size = new Size(123, 20);
+            label8.Size = new Size(148, 20);
             label8.TabIndex = 9;
-            label8.Text = "Nombre agente:";
+            label8.Text = "Nombre del agente:";
             // 
-            // textBox4
+            // txtTelefono
             // 
-            textBox4.Location = new Point(21, 318);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(237, 27);
-            textBox4.TabIndex = 8;
+            txtTelefono.Location = new Point(21, 318);
+            txtTelefono.Name = "txtTelefono";
+            txtTelefono.Size = new Size(237, 27);
+            txtTelefono.TabIndex = 8;
             // 
-            // textBox3
+            // txtCorreo
             // 
-            textBox3.Location = new Point(21, 236);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(237, 27);
-            textBox3.TabIndex = 7;
+            txtCorreo.Location = new Point(21, 236);
+            txtCorreo.Name = "txtCorreo";
+            txtCorreo.Size = new Size(237, 27);
+            txtCorreo.TabIndex = 7;
             // 
             // label7
             // 
@@ -196,19 +197,19 @@
             label6.TabIndex = 5;
             label6.Text = "Correo:";
             // 
-            // textBox2
+            // txtDireccion
             // 
-            textBox2.Location = new Point(21, 156);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(237, 27);
-            textBox2.TabIndex = 4;
+            txtDireccion.Location = new Point(21, 156);
+            txtDireccion.Name = "txtDireccion";
+            txtDireccion.Size = new Size(237, 27);
+            txtDireccion.TabIndex = 4;
             // 
-            // textBox1
+            // txtNombreEmpresa
             // 
-            textBox1.Location = new Point(21, 70);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(237, 27);
-            textBox1.TabIndex = 3;
+            txtNombreEmpresa.Location = new Point(21, 70);
+            txtNombreEmpresa.Name = "txtNombreEmpresa";
+            txtNombreEmpresa.Size = new Size(237, 27);
+            txtNombreEmpresa.TabIndex = 3;
             // 
             // label5
             // 
@@ -226,9 +227,9 @@
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.Location = new Point(21, 47);
             label4.Name = "label4";
-            label4.Size = new Size(71, 20);
+            label4.Size = new Size(172, 20);
             label4.TabIndex = 1;
-            label4.Text = "Nombre:";
+            label4.Text = "Nombre de la empresa:";
             // 
             // label3
             // 
@@ -243,38 +244,54 @@
             // panel2
             // 
             panel2.BorderStyle = BorderStyle.FixedSingle;
-            panel2.Controls.Add(iconButton2);
-            panel2.Controls.Add(iconButton1);
+            panel2.Controls.Add(btnActualizar);
+            panel2.Controls.Add(btnEliminar);
+            panel2.Controls.Add(btnGuardar);
             panel2.Controls.Add(label11);
-            panel2.Controls.Add(dataGridView1);
+            panel2.Controls.Add(dgvProveedores);
             panel2.Location = new Point(346, 170);
             panel2.Name = "panel2";
             panel2.Size = new Size(748, 600);
             panel2.TabIndex = 4;
             // 
-            // iconButton2
+            // btnActualizar
             // 
-            iconButton2.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconButton2.IconColor = Color.Black;
-            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton2.Location = new Point(385, 533);
-            iconButton2.Name = "iconButton2";
-            iconButton2.Size = new Size(94, 29);
-            iconButton2.TabIndex = 3;
-            iconButton2.Text = "Eliminar";
-            iconButton2.UseVisualStyleBackColor = true;
+            btnActualizar.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnActualizar.IconColor = Color.Black;
+            btnActualizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnActualizar.Location = new Point(323, 533);
+            btnActualizar.Name = "btnActualizar";
+            btnActualizar.Size = new Size(94, 29);
+            btnActualizar.TabIndex = 4;
+            btnActualizar.Text = "Actualizar";
+            btnActualizar.UseVisualStyleBackColor = true;
+            btnActualizar.Click += btnActualizar_Click;
             // 
-            // iconButton1
+            // btnEliminar
             // 
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconButton1.IconColor = Color.Black;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.Location = new Point(271, 533);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(94, 29);
-            iconButton1.TabIndex = 2;
-            iconButton1.Text = "Guardar";
-            iconButton1.UseVisualStyleBackColor = true;
+            btnEliminar.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnEliminar.IconColor = Color.Black;
+            btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnEliminar.Location = new Point(423, 533);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(94, 29);
+            btnEliminar.TabIndex = 3;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
+            // 
+            // btnGuardar
+            // 
+            btnGuardar.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnGuardar.IconColor = Color.Black;
+            btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnGuardar.Location = new Point(223, 535);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(94, 29);
+            btnGuardar.TabIndex = 2;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // label11
             // 
@@ -286,14 +303,15 @@
             label11.TabIndex = 1;
             label11.Text = "Lista de Proveedores";
             // 
-            // dataGridView1
+            // dgvProveedores
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(45, 47);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(682, 441);
-            dataGridView1.TabIndex = 0;
+            dgvProveedores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvProveedores.Location = new Point(45, 47);
+            dgvProveedores.Name = "dgvProveedores";
+            dgvProveedores.RowHeadersWidth = 51;
+            dgvProveedores.Size = new Size(682, 441);
+            dgvProveedores.TabIndex = 0;
+            dgvProveedores.CellContentClick += dgvProveedores_CellContentClick;
             // 
             // FormProveedores
             // 
@@ -308,12 +326,13 @@
             Controls.Add(pictureBox1);
             Name = "FormProveedores";
             Text = "FormProveedores";
+            Load += FormProveedores_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvProveedores).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -325,24 +344,25 @@
         private Label label2;
         private Panel panel1;
         private Label label3;
-        private TextBox textBox1;
+        private TextBox txtNombreEmpresa;
         private Label label5;
         private Label label4;
-        private TextBox textBox2;
-        private TextBox textBox4;
-        private TextBox textBox3;
+        private TextBox txtDireccion;
+        private TextBox txtTelefono;
+        private TextBox txtCorreo;
         private Label label7;
         private Label label6;
         private Label label8;
-        private TextBox textBox6;
-        private TextBox textBox5;
+        private TextBox txtTelefonoAgente;
+        private TextBox txtNombreAgente;
         private Label label9;
-        private TextBox textBox7;
+        private TextBox txtMontoMinimoCompra;
         private Label label10;
         private Panel panel2;
         private Label label11;
-        private DataGridView dataGridView1;
-        private FontAwesome.Sharp.IconButton iconButton2;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private DataGridView dgvProveedores;
+        private FontAwesome.Sharp.IconButton btnEliminar;
+        private FontAwesome.Sharp.IconButton btnGuardar;
+        private FontAwesome.Sharp.IconButton btnActualizar;
     }
 }
