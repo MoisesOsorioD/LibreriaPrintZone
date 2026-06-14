@@ -41,8 +41,6 @@
             label8 = new Label();
             txtClave = new TextBox();
             label7 = new Label();
-            txtEmail = new TextBox();
-            label6 = new Label();
             txtNombreCompleto = new TextBox();
             label5 = new Label();
             txtNombreUsuario = new TextBox();
@@ -103,8 +101,6 @@
             panel1.Controls.Add(label8);
             panel1.Controls.Add(txtClave);
             panel1.Controls.Add(label7);
-            panel1.Controls.Add(txtEmail);
-            panel1.Controls.Add(label6);
             panel1.Controls.Add(txtNombreCompleto);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(txtNombreUsuario);
@@ -188,7 +184,7 @@
             cmbRol.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbRol.FlatStyle = FlatStyle.Flat;
             cmbRol.FormattingEnabled = true;
-            cmbRol.Items.AddRange(new object[] { "Administrador", "Cajero", "Mesero" });
+            cmbRol.Items.AddRange(new object[] { "Administrador", "Vendedor" });
             cmbRol.Location = new Point(20, 371);
             cmbRol.Name = "cmbRol";
             cmbRol.Size = new Size(351, 28);
@@ -222,24 +218,6 @@
             label7.Size = new Size(92, 20);
             label7.TabIndex = 8;
             label7.Text = "Contraseña:";
-            // 
-            // txtEmail
-            // 
-            txtEmail.BorderStyle = BorderStyle.FixedSingle;
-            txtEmail.Location = new Point(20, 244);
-            txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(351, 27);
-            txtEmail.TabIndex = 7;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label6.Location = new Point(20, 211);
-            label6.Name = "label6";
-            label6.Size = new Size(51, 20);
-            label6.TabIndex = 6;
-            label6.Text = "Email:";
             // 
             // txtNombreCompleto
             // 
@@ -388,8 +366,6 @@
         private Label label4;
         private TextBox txtClave;
         private Label label7;
-        private TextBox txtEmail;
-        private Label label6;
         private TextBox txtNombreCompleto;
         private Label label5;
         private ComboBox cmbRol;

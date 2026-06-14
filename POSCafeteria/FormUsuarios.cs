@@ -57,7 +57,6 @@ namespace Printzone
             _idUsuarioSeleccionado = 0;
             txtNombreUsuario.Clear();
             txtNombreCompleto.Clear();
-            txtEmail.Clear();
             txtClave.Clear();
             cmbRol.SelectedIndex = -1;
             chkActivo.Checked = true;
@@ -101,13 +100,12 @@ namespace Printzone
             {
                 DataGridViewRow fila = dgvUsuarios.Rows[e.RowIndex];
 
-                _idUsuarioSeleccionado = Convert.ToInt32(fila.Cells["IdUsuario"].Value);
-                txtNombreUsuario.Text = fila.Cells["NombreUsuario"].Value.ToString();
-                txtNombreCompleto.Text = fila.Cells["NombreCompleto"].Value.ToString();
-                txtClave.Text = fila.Cells["Clave"].Value.ToString();
-                txtEmail.Text = fila.Cells["Email"].Value.ToString();
-                cmbRol.Text = fila.Cells["Rol"].Value.ToString();
-                chkActivo.Checked = Convert.ToBoolean(fila.Cells["Activo"].Value);
+                _idUsuarioSeleccionado = Convert.ToInt32(fila.Cells["id_usuario"].Value);
+                txtNombreUsuario.Text = fila.Cells["nombre_usuario"].Value.ToString();
+                txtNombreCompleto.Text = fila.Cells["nombre_completo"].Value.ToString();
+                txtClave.Text = fila.Cells["clave"].Value.ToString();
+                cmbRol.Text = fila.Cells["rol"].Value.ToString();
+                chkActivo.Checked = Convert.ToBoolean(fila.Cells["activo"].Value);
             }
         }
 
@@ -121,8 +119,8 @@ namespace Printzone
             }
 
             // 2. Extraer el ID directamente de la fila seleccionada en el DataGridView
-            int idParaEliminar = Convert.ToInt32(dgvUsuarios.CurrentRow.Cells["IdUsuario"].Value);
-            string nombreUsuario = dgvUsuarios.CurrentRow.Cells["NombreUsuario"].Value.ToString()!;
+            int idParaEliminar = Convert.ToInt32(dgvUsuarios.CurrentRow.Cells["id_usuario"].Value);
+            string nombreUsuario = dgvUsuarios.CurrentRow.Cells["nombre_usuario"].Value.ToString()!;
 
             // 3. Pedir confirmación (siempre es buena práctica mostrar a quién van a borrar)
             DialogResult resultado = MessageBox.Show($"¿Está seguro de desactivar al usuario '{nombreUsuario}'?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
