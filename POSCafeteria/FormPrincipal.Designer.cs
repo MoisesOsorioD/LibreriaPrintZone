@@ -241,6 +241,7 @@
             btnCategorias.Text = "Categorias";
             btnCategorias.TextAlign = ContentAlignment.MiddleRight;
             btnCategorias.UseVisualStyleBackColor = true;
+            btnCategorias.Click += btnCategorias_Click;
             // 
             // btnProveedores
             // 

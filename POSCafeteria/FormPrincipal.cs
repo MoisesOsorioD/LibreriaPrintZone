@@ -70,5 +70,11 @@ namespace Printzone
 
             this.Show();
         }
+
+        private void btnCategorias_Click(object sender, EventArgs e)
+        {
+            FormCategorias frmcategorias = new FormCategorias();
+            frmcategorias.ShowDialog();
+        }
     }
 }
