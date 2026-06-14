@@ -165,7 +165,8 @@ namespace Printzone
                     return;
                 }
 
-                CategoriaBLL categoriaBLL = new CategoriaBLL();
+                CategoriaBLL categoriaBLL =
+                    new CategoriaBLL();
 
                 bool resultado =
                     categoriaBLL.EliminarCategoria(
@@ -185,17 +186,7 @@ namespace Printzone
             }
             catch (Exception ex)
             {
-                if (ex.Message.Contains("REFERENCE") ||
-                    ex.Message.Contains("FK_Productos_Categorias") ||
-                    ex.Message.Contains("DELETE"))
-                {
-                    MessageBox.Show(
-                        "No se puede eliminar la categoría porque tiene productos asociados.");
-                }
-                else
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                MessageBox.Show(ex.Message);
             }
         }
     }

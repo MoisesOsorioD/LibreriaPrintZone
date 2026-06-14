@@ -107,5 +107,32 @@ namespace Printzone.DAL
                 return comando.ExecuteNonQuery() > 0;
             }
         }
+
+
+
+        public bool TieneProductosAsociados(int idCategoria)
+        {
+            using (SqlConnection conexion = ConexionDB.ObtenerConexion())
+            {
+                string consulta = @"SELECT COUNT(*)
+                            FROM Productos
+                            WHERE id_categoria = @idCategoria";
+
+                SqlCommand comando = new SqlCommand(
+                    consulta,
+                    conexion);
+
+                comando.Parameters.AddWithValue(
+                    "@idCategoria",
+                    idCategoria);
+
+                conexion.Open();
+
+                int cantidad =
+                    (int)comando.ExecuteScalar();
+
+                return cantidad > 0;
+            }
+        }
     }
 }

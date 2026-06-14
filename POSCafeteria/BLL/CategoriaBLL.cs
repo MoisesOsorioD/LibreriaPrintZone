@@ -1,4 +1,5 @@
-﻿using Printzone.DAL;
+﻿using Microsoft.Data.SqlClient;
+using Printzone.DAL;
 using Printzone.Entidades;
 using System;
 using System.Collections.Generic;
@@ -51,7 +52,17 @@ namespace Printzone.BLL
                     "Debe seleccionar una categoría válida.");
             }
 
+            if (_categoriaDAL.TieneProductosAsociados(idCategoria))
+            {
+                throw new ArgumentException(
+                    "No se puede eliminar la categoría porque tiene productos asociados.");
+            }
+
             return _categoriaDAL.EliminarCategoria(idCategoria);
         }
+
+
+
+
     }
 }
