@@ -14,9 +14,13 @@ namespace Printzone
     public partial class FrmProductos : Form
     {
         private int idProductoSeleccionado = 0;
-        public FrmProductos()
+        private Usuario _usuarioSesion;
+
+        public FrmProductos(Usuario usuario)
         {
             InitializeComponent();
+
+            _usuarioSesion = usuario;
         }
 
 
@@ -42,6 +46,22 @@ namespace Printzone
         {
             CargarCategorias();
             CargarProductos();
+
+            if (_usuarioSesion.rol == "Vendedor")
+            {
+                btnGuardar.Visible = false;
+                btnEliminar.Visible = false;
+
+                txtNombre.ReadOnly = true;
+                txtDescripcion.ReadOnly = true;
+                txtMarca.ReadOnly = true;
+                txtPrecioCompra.ReadOnly = true;
+                txtPrecioVenta.ReadOnly = true;
+                txtCodigoBarras.ReadOnly = true;
+                txtStockMinimo.ReadOnly = true;
+
+                cmbCategoria.Enabled = false;
+            }
         }
 
         private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)

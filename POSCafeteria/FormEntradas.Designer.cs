@@ -123,7 +123,7 @@
             panel1.Controls.Add(dgvEntradas);
             panel1.Location = new Point(358, 147);
             panel1.Name = "panel1";
-            panel1.Size = new Size(631, 534);
+            panel1.Size = new Size(781, 534);
             panel1.TabIndex = 7;
             // 
             // label8
@@ -142,7 +142,7 @@
             dgvEntradas.Location = new Point(3, 60);
             dgvEntradas.Name = "dgvEntradas";
             dgvEntradas.RowHeadersWidth = 51;
-            dgvEntradas.Size = new Size(623, 378);
+            dgvEntradas.Size = new Size(773, 378);
             dgvEntradas.TabIndex = 0;
             // 
             // txtCostoLote
@@ -247,7 +247,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Linen;
-            ClientSize = new Size(1017, 693);
+            ClientSize = new Size(1151, 693);
             Controls.Add(pictureBox1);
             Controls.Add(label6);
             Controls.Add(panel2);

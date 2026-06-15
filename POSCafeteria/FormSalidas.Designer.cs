@@ -179,7 +179,7 @@
             panel1.Controls.Add(label9);
             panel1.Location = new Point(341, 160);
             panel1.Name = "panel1";
-            panel1.Size = new Size(596, 579);
+            panel1.Size = new Size(689, 579);
             panel1.TabIndex = 12;
             // 
             // dgvSalidas
@@ -188,7 +188,7 @@
             dgvSalidas.Location = new Point(8, 67);
             dgvSalidas.Name = "dgvSalidas";
             dgvSalidas.RowHeadersWidth = 51;
-            dgvSalidas.Size = new Size(579, 416);
+            dgvSalidas.Size = new Size(673, 416);
             dgvSalidas.TabIndex = 1;
             // 
             // label9
@@ -257,7 +257,7 @@
             btnRegresar.IconChar = FontAwesome.Sharp.IconChar.None;
             btnRegresar.IconColor = Color.Black;
             btnRegresar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnRegresar.Location = new Point(843, 46);
+            btnRegresar.Location = new Point(965, 34);
             btnRegresar.Name = "btnRegresar";
             btnRegresar.Size = new Size(94, 29);
             btnRegresar.TabIndex = 14;
@@ -270,7 +270,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Linen;
-            ClientSize = new Size(954, 751);
+            ClientSize = new Size(1085, 751);
             Controls.Add(pictureBox1);
             Controls.Add(btnRegresar);
             Controls.Add(label7);

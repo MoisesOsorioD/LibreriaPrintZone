@@ -28,6 +28,16 @@ namespace Printzone
             lblRol.Text = _usuarioSesion.rol;
             lblFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
 
+
+            if (_usuarioSesion.rol == "Vendedor")
+            {
+                btnUsuarios.Visible = false;
+                btnCategorias.Visible = false;
+                btnProveedores.Visible = false;
+                btnEntradas.Visible = false;
+                btnSalidas.Top = btnProductos.Bottom + 15;
+            }
+
             CargarCantidadProductos();
             CargarProductosStockMinimo();
             CargarUltimasEntradas();
@@ -50,7 +60,9 @@ namespace Printzone
 
         private void btnProductos_Click(object sender, EventArgs e)
         {
-            FrmProductos frmProductos = new FrmProductos();
+            FrmProductos frmProductos =
+        new FrmProductos(_usuarioSesion);
+
             frmProductos.ShowDialog();
         }
 
