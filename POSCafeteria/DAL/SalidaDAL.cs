@@ -77,5 +77,75 @@ namespace Printzone.DAL
 
             return lista;
         }
+
+
+
+
+
+        public List<Salida> ObtenerSalidas()
+        {
+            List<Salida> lista = new List<Salida>();
+
+            using (SqlConnection conexion = ConexionDB.ObtenerConexion())
+            {
+                string consulta = @"
+        SELECT
+            s.id_salida,
+            s.fecha_salida,
+            s.cantidad,
+            s.motivo,
+            s.id_usuario,
+            s.id_producto,
+            p.nombre AS producto,
+            u.nombre_usuario
+        FROM Salidas s
+        INNER JOIN Productos p
+            ON s.id_producto = p.id_producto
+        INNER JOIN Usuarios u
+            ON s.id_usuario = u.id_usuario
+        ORDER BY s.fecha_salida DESC";
+
+                SqlCommand comando =
+                    new SqlCommand(consulta, conexion);
+
+                conexion.Open();
+
+                SqlDataReader reader =
+                    comando.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Salida salida = new Salida();
+
+                    salida.id_salida =
+                        Convert.ToInt32(reader["id_salida"]);
+
+                    salida.fecha_salida =
+                        Convert.ToDateTime(reader["fecha_salida"]);
+
+                    salida.cantidad =
+                        Convert.ToInt32(reader["cantidad"]);
+
+                    salida.motivo =
+                        reader["motivo"].ToString();
+
+                    salida.id_usuario =
+                        Convert.ToInt32(reader["id_usuario"]);
+
+                    salida.id_producto =
+                        Convert.ToInt32(reader["id_producto"]);
+
+                    salida.nombre_producto =
+                        reader["producto"].ToString();
+
+                    salida.nombre_usuario =
+                        reader["nombre_usuario"].ToString();
+
+                    lista.Add(salida);
+                }
+            }
+
+            return lista;
+        }
     }
 }

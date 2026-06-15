@@ -31,6 +31,7 @@ namespace Printzone
         {
             CargarProductos();
             lblUsuario.Text = _usuarioSesion.nombre_completo;
+            CargarSalidas();
         }
 
         private void cmbProducto_SelectedIndexChanged(object sender, EventArgs e)
@@ -93,6 +94,7 @@ namespace Printzone
                         txtMotivo.Clear();
 
                         CargarProductos();
+                        CargarSalidas();
 
                         lblStockActual.Text = "";
                     }
@@ -135,6 +137,27 @@ namespace Printzone
         private void btnRegresar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+
+
+        private void CargarSalidas()
+        {
+            SalidaBLL salidaBLL =
+                new SalidaBLL();
+
+            dgvSalidas.DataSource =
+                salidaBLL.ObtenerSalidas();
+
+            dgvSalidas.Columns["id_salida"].Visible = false;
+            dgvSalidas.Columns["id_usuario"].Visible = false;
+            dgvSalidas.Columns["id_producto"].Visible = false;
+
+            dgvSalidas.Columns["fecha_salida"].HeaderText = "Fecha";
+            dgvSalidas.Columns["cantidad"].HeaderText = "Cantidad";
+            dgvSalidas.Columns["motivo"].HeaderText = "Motivo";
+            dgvSalidas.Columns["nombre_producto"].HeaderText = "Producto";
+            dgvSalidas.Columns["nombre_usuario"].HeaderText = "Usuario";
         }
     }
 }

@@ -47,21 +47,19 @@
             txtStockMinimo = new TextBox();
             cmbCategoria = new ComboBox();
             panel1 = new Panel();
-            panel2 = new Panel();
-            pictureBox1 = new PictureBox();
             label7 = new Label();
+            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
-            panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(429, 9);
+            label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(381, 94);
             label1.Name = "label1";
-            label1.Size = new Size(247, 41);
+            label1.Size = new Size(189, 31);
             label1.TabIndex = 0;
             label1.Text = "Nuevo Producto";
             // 
@@ -237,49 +235,40 @@
             panel1.Controls.Add(txtDescripcion);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label6);
-            panel1.Location = new Point(336, 82);
+            panel1.Location = new Point(12, 157);
             panel1.Name = "panel1";
             panel1.Size = new Size(742, 428);
             panel1.TabIndex = 20;
-            // 
-            // panel2
-            // 
-            panel2.BorderStyle = BorderStyle.FixedSingle;
-            panel2.Controls.Add(label7);
-            panel2.Controls.Add(pictureBox1);
-            panel2.Location = new Point(12, 82);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(318, 428);
-            panel2.TabIndex = 21;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.logo;
-            pictureBox1.Location = new Point(51, 116);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(210, 180);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.ForeColor = Color.Maroon;
-            label7.Location = new Point(29, 18);
+            label7.ForeColor = SystemColors.ControlText;
+            label7.Location = new Point(381, 24);
             label7.Name = "label7";
             label7.Size = new Size(273, 41);
             label7.TabIndex = 1;
             label7.Text = "Librería PrintZone";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.logo;
+            pictureBox1.Location = new Point(208, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(167, 144);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // FormNuevoProducto
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Linen;
-            ClientSize = new Size(1100, 526);
-            Controls.Add(panel2);
+            ClientSize = new Size(790, 621);
+            Controls.Add(pictureBox1);
+            Controls.Add(label7);
             Controls.Add(panel1);
             Controls.Add(label1);
             Name = "FormNuevoProducto";
@@ -287,8 +276,6 @@
             Load += FormNuevoProducto_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -315,7 +302,6 @@
         private TextBox txtStockMinimo;
         private ComboBox cmbCategoria;
         private Panel panel1;
-        private Panel panel2;
         private Label label7;
         private PictureBox pictureBox1;
     }

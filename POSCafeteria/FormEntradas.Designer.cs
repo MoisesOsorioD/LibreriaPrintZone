@@ -36,14 +36,18 @@
             label3 = new Label();
             label4 = new Label();
             panel1 = new Panel();
+            label8 = new Label();
+            dgvEntradas = new DataGridView();
             txtCostoLote = new TextBox();
             label5 = new Label();
             btnNuevoProducto = new FontAwesome.Sharp.IconButton();
             btnRegistrar = new FontAwesome.Sharp.IconButton();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
+            label7 = new Label();
             label6 = new Label();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvEntradas).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -51,17 +55,17 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(274, 9);
+            label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(430, 83);
             label1.Name = "label1";
-            label1.Size = new Size(492, 41);
+            label1.Size = new Size(373, 31);
             label1.TabIndex = 0;
             label1.Text = "Gestión de entradas de productos";
             // 
             // cmbProveedor
             // 
             cmbProveedor.FormattingEnabled = true;
-            cmbProveedor.Location = new Point(25, 70);
+            cmbProveedor.Location = new Point(19, 97);
             cmbProveedor.Name = "cmbProveedor";
             cmbProveedor.Size = new Size(279, 28);
             cmbProveedor.TabIndex = 1;
@@ -69,7 +73,7 @@
             // cmbProducto
             // 
             cmbProducto.FormattingEnabled = true;
-            cmbProducto.Location = new Point(25, 187);
+            cmbProducto.Location = new Point(19, 188);
             cmbProducto.Name = "cmbProducto";
             cmbProducto.Size = new Size(279, 28);
             cmbProducto.TabIndex = 2;
@@ -78,7 +82,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(401, 26);
+            label2.Location = new Point(19, 261);
             label2.Name = "label2";
             label2.Size = new Size(75, 20);
             label2.TabIndex = 3;
@@ -86,7 +90,7 @@
             // 
             // txtCantidad
             // 
-            txtCantidad.Location = new Point(401, 71);
+            txtCantidad.Location = new Point(19, 285);
             txtCantidad.Name = "txtCantidad";
             txtCantidad.Size = new Size(125, 27);
             txtCantidad.TabIndex = 4;
@@ -95,17 +99,18 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(25, 26);
+            label3.Location = new Point(19, 73);
             label3.Name = "label3";
             label3.Size = new Size(86, 20);
             label3.TabIndex = 5;
             label3.Text = "Proveedor:";
+            label3.Click += label3_Click;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(25, 150);
+            label4.Location = new Point(19, 165);
             label4.Name = "label4";
             label4.Size = new Size(77, 20);
             label4.TabIndex = 6;
@@ -114,24 +119,35 @@
             // panel1
             // 
             panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Controls.Add(txtCostoLote);
-            panel1.Controls.Add(label5);
-            panel1.Controls.Add(btnNuevoProducto);
-            panel1.Controls.Add(btnRegistrar);
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(label3);
-            panel1.Controls.Add(label4);
-            panel1.Controls.Add(cmbProveedor);
-            panel1.Controls.Add(txtCantidad);
-            panel1.Controls.Add(cmbProducto);
-            panel1.Location = new Point(328, 85);
+            panel1.Controls.Add(label8);
+            panel1.Controls.Add(dgvEntradas);
+            panel1.Location = new Point(358, 147);
             panel1.Name = "panel1";
-            panel1.Size = new Size(630, 413);
+            panel1.Size = new Size(631, 534);
             panel1.TabIndex = 7;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.Location = new Point(198, 14);
+            label8.Name = "label8";
+            label8.Size = new Size(205, 28);
+            label8.TabIndex = 1;
+            label8.Text = "Lista de las entradas";
+            // 
+            // dgvEntradas
+            // 
+            dgvEntradas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvEntradas.Location = new Point(3, 60);
+            dgvEntradas.Name = "dgvEntradas";
+            dgvEntradas.RowHeadersWidth = 51;
+            dgvEntradas.Size = new Size(623, 378);
+            dgvEntradas.TabIndex = 0;
             // 
             // txtCostoLote
             // 
-            txtCostoLote.Location = new Point(401, 187);
+            txtCostoLote.Location = new Point(19, 373);
             txtCostoLote.Name = "txtCostoLote";
             txtCostoLote.Size = new Size(125, 27);
             txtCostoLote.TabIndex = 10;
@@ -140,7 +156,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(401, 150);
+            label5.Location = new Point(19, 350);
             label5.Name = "label5";
             label5.Size = new Size(108, 20);
             label5.TabIndex = 9;
@@ -152,9 +168,9 @@
             btnNuevoProducto.IconColor = Color.Black;
             btnNuevoProducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnNuevoProducto.ImageAlign = ContentAlignment.TopCenter;
-            btnNuevoProducto.Location = new Point(310, 303);
+            btnNuevoProducto.Location = new Point(171, 421);
             btnNuevoProducto.Name = "btnNuevoProducto";
-            btnNuevoProducto.Size = new Size(127, 65);
+            btnNuevoProducto.Size = new Size(127, 67);
             btnNuevoProducto.TabIndex = 8;
             btnNuevoProducto.Text = "Nuevo Producto";
             btnNuevoProducto.TextAlign = ContentAlignment.BottomCenter;
@@ -167,7 +183,7 @@
             btnRegistrar.IconColor = Color.Black;
             btnRegistrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnRegistrar.ImageAlign = ContentAlignment.TopCenter;
-            btnRegistrar.Location = new Point(173, 303);
+            btnRegistrar.Location = new Point(19, 421);
             btnRegistrar.Name = "btnRegistrar";
             btnRegistrar.Size = new Size(131, 65);
             btnRegistrar.TabIndex = 7;
@@ -179,9 +195,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.logo;
-            pictureBox1.Location = new Point(51, 115);
+            pictureBox1.Location = new Point(253, 12);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(180, 141);
+            pictureBox1.Size = new Size(171, 114);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 8;
             pictureBox1.TabStop = false;
@@ -189,19 +205,38 @@
             // panel2
             // 
             panel2.BorderStyle = BorderStyle.FixedSingle;
-            panel2.Controls.Add(label6);
-            panel2.Controls.Add(pictureBox1);
-            panel2.Location = new Point(12, 85);
+            panel2.Controls.Add(label7);
+            panel2.Controls.Add(btnNuevoProducto);
+            panel2.Controls.Add(txtCostoLote);
+            panel2.Controls.Add(btnRegistrar);
+            panel2.Controls.Add(label3);
+            panel2.Controls.Add(label5);
+            panel2.Controls.Add(cmbProveedor);
+            panel2.Controls.Add(label2);
+            panel2.Controls.Add(txtCantidad);
+            panel2.Controls.Add(cmbProducto);
+            panel2.Controls.Add(label4);
+            panel2.Location = new Point(12, 147);
             panel2.Name = "panel2";
-            panel2.Size = new Size(306, 413);
+            panel2.Size = new Size(328, 534);
             panel2.TabIndex = 9;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.Location = new Point(92, 14);
+            label7.Name = "label7";
+            label7.Size = new Size(127, 28);
+            label7.TabIndex = 11;
+            label7.Text = "Información";
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.Maroon;
-            label6.Location = new Point(17, 9);
+            label6.ForeColor = SystemColors.ControlText;
+            label6.Location = new Point(430, 22);
             label6.Name = "label6";
             label6.Size = new Size(273, 41);
             label6.TabIndex = 9;
@@ -212,7 +247,9 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Linen;
-            ClientSize = new Size(1002, 578);
+            ClientSize = new Size(1017, 693);
+            Controls.Add(pictureBox1);
+            Controls.Add(label6);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(label1);
@@ -221,6 +258,7 @@
             Load += FormEntradas_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvEntradas).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
@@ -245,5 +283,8 @@
         private PictureBox pictureBox1;
         private Panel panel2;
         private Label label6;
+        private DataGridView dgvEntradas;
+        private Label label7;
+        private Label label8;
     }
 }

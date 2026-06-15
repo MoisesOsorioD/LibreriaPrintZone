@@ -37,6 +37,7 @@ namespace Printzone
         {
             CargarProveedores();
             CargarProductos();
+            CargarEntradas();
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -77,6 +78,8 @@ namespace Printzone
 
                         cmbProveedor.SelectedIndex = 0;
                         cmbProducto.SelectedIndex = 0;
+
+                        CargarEntradas();
                     }
                     else
                     {
@@ -120,6 +123,33 @@ namespace Printzone
             formNuevoProducto.ShowDialog();
 
             CargarProductos();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        private void CargarEntradas()
+        {
+            EntradaBLL entradaBLL =
+                new EntradaBLL();
+
+            dgvEntradas.DataSource =
+                entradaBLL.ObtenerEntradas();
+
+            dgvEntradas.Columns["id_entrada"].Visible = false;
+            dgvEntradas.Columns["id_proveedor"].Visible = false;
+            dgvEntradas.Columns["id_producto"].Visible = false;
+
+            dgvEntradas.Columns["fecha_entrada"].HeaderText = "Fecha";
+            dgvEntradas.Columns["cantidad"].HeaderText = "Cantidad";
+            dgvEntradas.Columns["costo_lote"].HeaderText = "Costo Lote";
+            dgvEntradas.Columns["nombre_producto"].HeaderText = "Producto";
+            dgvEntradas.Columns["nombre_proveedor"].HeaderText = "Proveedor";
+
         }
     }
 }

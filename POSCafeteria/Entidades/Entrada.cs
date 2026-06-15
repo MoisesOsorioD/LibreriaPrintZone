@@ -20,5 +20,7 @@ namespace Printzone.Entidades
 
 
         public string nombre_producto { get; set; }
+
+        public string nombre_proveedor { get; set; }
     }
 }
