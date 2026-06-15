@@ -51,6 +51,13 @@
             panel1 = new Panel();
             panel2 = new Panel();
             panel3 = new Panel();
+            txtCantidadProductos = new TextBox();
+            txtUltimaEntrada = new TextBox();
+            txtUltimaSalida = new TextBox();
+            label7 = new Label();
+            label5 = new Label();
+            label4 = new Label();
+            txtStockMinimo = new TextBox();
             label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
@@ -346,21 +353,102 @@
             // panel3
             // 
             panel3.BorderStyle = BorderStyle.FixedSingle;
+            panel3.Controls.Add(txtCantidadProductos);
+            panel3.Controls.Add(txtUltimaEntrada);
+            panel3.Controls.Add(txtUltimaSalida);
+            panel3.Controls.Add(label7);
+            panel3.Controls.Add(label5);
+            panel3.Controls.Add(label4);
+            panel3.Controls.Add(txtStockMinimo);
             panel3.Controls.Add(label2);
             panel3.Location = new Point(245, 202);
             panel3.Name = "panel3";
             panel3.Size = new Size(1064, 514);
             panel3.TabIndex = 24;
             // 
+            // txtCantidadProductos
+            // 
+            txtCantidadProductos.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtCantidadProductos.Location = new Point(550, 282);
+            txtCantidadProductos.Multiline = true;
+            txtCantidadProductos.Name = "txtCantidadProductos";
+            txtCantidadProductos.ReadOnly = true;
+            txtCantidadProductos.ScrollBars = ScrollBars.Vertical;
+            txtCantidadProductos.Size = new Size(395, 121);
+            txtCantidadProductos.TabIndex = 7;
+            // 
+            // txtUltimaEntrada
+            // 
+            txtUltimaEntrada.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtUltimaEntrada.Location = new Point(550, 52);
+            txtUltimaEntrada.Multiline = true;
+            txtUltimaEntrada.Name = "txtUltimaEntrada";
+            txtUltimaEntrada.ReadOnly = true;
+            txtUltimaEntrada.ScrollBars = ScrollBars.Vertical;
+            txtUltimaEntrada.Size = new Size(395, 121);
+            txtUltimaEntrada.TabIndex = 6;
+            // 
+            // txtUltimaSalida
+            // 
+            txtUltimaSalida.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtUltimaSalida.Location = new Point(26, 282);
+            txtUltimaSalida.Multiline = true;
+            txtUltimaSalida.Name = "txtUltimaSalida";
+            txtUltimaSalida.ReadOnly = true;
+            txtUltimaSalida.ScrollBars = ScrollBars.Vertical;
+            txtUltimaSalida.Size = new Size(425, 121);
+            txtUltimaSalida.TabIndex = 5;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.Location = new Point(550, 250);
+            label7.Name = "label7";
+            label7.Size = new Size(171, 20);
+            label7.TabIndex = 4;
+            label7.Text = "Cantidad de productos:";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Location = new Point(26, 250);
+            label5.Name = "label5";
+            label5.Size = new Size(179, 20);
+            label5.TabIndex = 3;
+            label5.Text = "Última salida registrada:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(550, 28);
+            label4.Name = "label4";
+            label4.Size = new Size(193, 20);
+            label4.TabIndex = 2;
+            label4.Text = "Última entrada registrada:";
+            // 
+            // txtStockMinimo
+            // 
+            txtStockMinimo.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtStockMinimo.Location = new Point(26, 52);
+            txtStockMinimo.Multiline = true;
+            txtStockMinimo.Name = "txtStockMinimo";
+            txtStockMinimo.ReadOnly = true;
+            txtStockMinimo.ScrollBars = ScrollBars.Vertical;
+            txtStockMinimo.Size = new Size(425, 121);
+            txtStockMinimo.TabIndex = 1;
+            // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(113, 26);
+            label2.Location = new Point(26, 26);
             label2.Name = "label2";
-            label2.Size = new Size(237, 23);
+            label2.Size = new Size(242, 23);
             label2.TabIndex = 0;
-            label2.Text = "Productos con stock mínimo";
+            label2.Text = "Productos con stock mínimo:";
             // 
             // FormPrincipal
             // 
@@ -411,5 +499,12 @@
         private Panel panel2;
         private Panel panel3;
         private Label label2;
+        private TextBox txtStockMinimo;
+        private TextBox txtUltimaSalida;
+        private Label label7;
+        private Label label5;
+        private Label label4;
+        private TextBox txtUltimaEntrada;
+        private TextBox txtCantidadProductos;
     }
 }

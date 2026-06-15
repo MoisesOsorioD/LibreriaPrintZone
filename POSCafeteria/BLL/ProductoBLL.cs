@@ -176,5 +176,19 @@ namespace Printzone.BLL
 
             return _productoDAL.EliminarProducto(idProducto);
         }
+
+
+
+        public int ObtenerCantidadProductos()
+        {
+            return _productoDAL.ObtenerCantidadProductos();
+        }
+
+
+
+        public List<Producto> ObtenerProductosStockMinimo()
+        {
+            return _productoDAL.ObtenerProductosStockMinimo();
+        }
     }
 }

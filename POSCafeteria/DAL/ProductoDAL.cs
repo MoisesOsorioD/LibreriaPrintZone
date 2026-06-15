@@ -233,5 +233,68 @@ namespace Printzone.DAL
                 return comando.ExecuteNonQuery() > 0;
             }
         }
+
+
+
+        public int ObtenerCantidadProductos()
+        {
+            using (SqlConnection conexion = ConexionDB.ObtenerConexion())
+            {
+                string consulta = @"
+            SELECT COUNT(*)
+            FROM Productos
+            WHERE activo = 1";
+
+                SqlCommand comando =
+                    new SqlCommand(consulta, conexion);
+
+                conexion.Open();
+
+                return (int)comando.ExecuteScalar();
+            }
+        }
+
+
+
+        public List<Producto> ObtenerProductosStockMinimo()
+        {
+            List<Producto> lista = new List<Producto>();
+
+            using (SqlConnection conexion = ConexionDB.ObtenerConexion())
+            {
+                string consulta = @"
+            SELECT *
+            FROM Productos
+            WHERE activo = 1
+            AND stock_actual <= stock_minimo";
+
+                SqlCommand comando =
+                    new SqlCommand(consulta, conexion);
+
+                conexion.Open();
+
+                SqlDataReader reader =
+                    comando.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Producto producto =
+                        new Producto();
+
+                    producto.nombre =
+                        reader["nombre"].ToString();
+
+                    producto.stock_actual =
+                        (int)reader["stock_actual"];
+
+                    producto.stock_minimo =
+                        (int)reader["stock_minimo"];
+
+                    lista.Add(producto);
+                }
+            }
+
+            return lista;
+        }
     }
 }

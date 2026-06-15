@@ -29,5 +29,53 @@ namespace Printzone.DAL
                 return comando.ExecuteNonQuery() > 0;
             }
         }
+
+
+
+        public List<Salida> ObtenerUltimasSalidas()
+        {
+            List<Salida> lista = new List<Salida>();
+
+            using (SqlConnection conexion = ConexionDB.ObtenerConexion())
+            {
+                string consulta = @"
+            SELECT TOP 4
+                   s.cantidad,
+                   s.fecha_salida,
+                   p.nombre
+            FROM Salidas s
+            INNER JOIN Productos p
+                ON s.id_producto = p.id_producto
+            ORDER BY s.fecha_salida DESC";
+
+                SqlCommand comando =
+                    new SqlCommand(consulta, conexion);
+
+                conexion.Open();
+
+                SqlDataReader reader =
+                    comando.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Salida salida =
+                        new Salida();
+
+                    salida.cantidad =
+                        (int)reader["cantidad"];
+
+                    salida.fecha_salida =
+                        Convert.ToDateTime(
+                            reader["fecha_salida"]);
+
+                    salida.nombre_producto =
+                        reader["nombre"].ToString();
+
+                    lista.Add(salida);
+                }
+            }
+
+            return lista;
+        }
     }
 }

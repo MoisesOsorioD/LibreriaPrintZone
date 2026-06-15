@@ -1,4 +1,5 @@
-﻿using Printzone.Entidades;
+﻿using Printzone.BLL;
+using Printzone.Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,6 +27,11 @@ namespace Printzone
             lblUsuario.Text = _usuarioSesion.nombre_usuario;
             lblRol.Text = _usuarioSesion.rol;
             lblFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
+
+            CargarCantidadProductos();
+            CargarProductosStockMinimo();
+            CargarUltimasEntradas();
+            CargarUltimasSalidas();
         }
 
         private void btnMenuUsuarios_Click(object sender, EventArgs e)
@@ -81,6 +87,93 @@ namespace Printzone
         {
             FormProveedores frmProveedores = new FormProveedores();
             frmProveedores.ShowDialog();
+        }
+
+
+
+        private void CargarCantidadProductos()
+        {
+            ProductoBLL productoBLL =
+                new ProductoBLL();
+
+            int cantidad =
+                productoBLL.ObtenerCantidadProductos();
+
+            txtCantidadProductos.Text =
+                cantidad + " productos registrados";
+        }
+
+
+
+        private void CargarProductosStockMinimo()
+        {
+            ProductoBLL productoBLL =
+                new ProductoBLL();
+
+            List<Producto> lista =
+                productoBLL.ObtenerProductosStockMinimo();
+
+            txtStockMinimo.Clear();
+
+            foreach (Producto producto in lista)
+            {
+                txtStockMinimo.AppendText(
+                    producto.nombre +
+                    " → Stock actual: " +
+                    producto.stock_actual +
+                    " | Mínimo: " +
+                    producto.stock_minimo +
+                    Environment.NewLine);
+            }
+        }
+
+
+
+        private void CargarUltimasEntradas()
+        {
+            EntradaBLL entradaBLL =
+                new EntradaBLL();
+
+            List<Entrada> lista =
+                entradaBLL.ObtenerUltimasEntradas();
+
+            txtUltimaEntrada.Clear();
+
+            foreach (Entrada entrada in lista)
+            {
+                txtUltimaEntrada.AppendText(
+                    entrada.cantidad +
+                    " " +
+                    entrada.nombre_producto +
+                    " - " +
+                    entrada.fecha_entrada.ToString("dd/MM/yyyy") +
+                    Environment.NewLine);
+            }
+        }
+
+
+
+
+        private void CargarUltimasSalidas()
+        {
+            SalidaBLL salidaBLL =
+                new SalidaBLL();
+
+            List<Salida> lista =
+                salidaBLL.ObtenerUltimasSalidas();
+
+            txtUltimaSalida.Clear();
+
+            foreach (Salida salida in lista)
+            {
+                txtUltimaSalida.AppendText(
+                    salida.cantidad +
+                    " " +
+                    salida.nombre_producto +
+                    " - " +
+                    salida.fecha_salida.ToString("dd/MM/yyyy") +
+                    Environment.NewLine);
+            }
         }
     }
 }

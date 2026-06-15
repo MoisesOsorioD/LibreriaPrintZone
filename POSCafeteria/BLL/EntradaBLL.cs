@@ -32,5 +32,12 @@ namespace Printzone.BLL
 
             return _entradaDAL.RegistrarEntrada(entrada);
         }
+
+
+
+        public List<Entrada> ObtenerUltimasEntradas()
+        {
+            return _entradaDAL.ObtenerUltimasEntradas();
+        }
     }
 }
