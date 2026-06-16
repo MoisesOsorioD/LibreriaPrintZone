@@ -461,6 +461,8 @@
             Controls.Add(panel1);
             Name = "FormPrincipal";
             Text = "FormPrincipal";
+            FormClosing += FormPrincipal_FormClosing;
+            FormClosed += FormPrincipal_FormClosed;
             Load += FormPrincipal_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();

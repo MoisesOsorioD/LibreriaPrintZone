@@ -14,6 +14,7 @@ namespace Printzone
     {
         private Form _frmlogin;
         private Usuario _usuarioSesion;
+        private bool cerrandoSesion = false;
         public FormPrincipal(Usuario user, Form frmlogin)
         {
             InitializeComponent();
@@ -52,6 +53,7 @@ namespace Printzone
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
+            cerrandoSesion = true;
             // Cerrar la sesión actual y volver al formulario de inicio de sesión
             _frmlogin.Show();
             this.Close();
@@ -185,6 +187,34 @@ namespace Printzone
                     " - " +
                     salida.fecha_salida.ToString("dd/MM/yyyy") +
                     Environment.NewLine);
+            }
+        }
+
+        private void FormPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (cerrandoSesion)
+            {
+                return;
+            }
+
+            DialogResult respuesta =
+                MessageBox.Show(
+                    "¿Realmente desea salir del sistema?",
+                    "Confirmar salida",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+            if (respuesta == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void FormPrincipal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (!cerrandoSesion)
+            {
+                Application.Exit();
             }
         }
     }
