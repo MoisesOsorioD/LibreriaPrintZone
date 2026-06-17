@@ -72,7 +72,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Maroon;
+            label1.ForeColor = SystemColors.ControlText;
             label1.Location = new Point(70, 5);
             label1.Name = "label1";
             label1.Size = new Size(254, 38);
@@ -201,12 +201,12 @@
             // 
             // btnCerrarSesion
             // 
-            btnCerrarSesion.BackColor = Color.Brown;
+            btnCerrarSesion.BackColor = Color.White;
             btnCerrarSesion.FlatStyle = FlatStyle.Flat;
             btnCerrarSesion.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            btnCerrarSesion.ForeColor = Color.White;
+            btnCerrarSesion.ForeColor = Color.Black;
             btnCerrarSesion.IconChar = FontAwesome.Sharp.IconChar.RightToBracket;
-            btnCerrarSesion.IconColor = Color.White;
+            btnCerrarSesion.IconColor = Color.Black;
             btnCerrarSesion.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnCerrarSesion.ImageAlign = ContentAlignment.MiddleRight;
             btnCerrarSesion.Location = new Point(1091, 56);

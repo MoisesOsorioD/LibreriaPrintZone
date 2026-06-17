@@ -68,10 +68,10 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(357, 106);
+            label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(357, 94);
             label2.Name = "label2";
-            label2.Size = new Size(291, 28);
+            label2.Size = new Size(330, 31);
             label2.TabIndex = 2;
             label2.Text = "Administración de Categorias";
             // 
@@ -83,53 +83,59 @@
             panel1.Controls.Add(btnGuardar);
             panel1.Controls.Add(txtNombreCategoria);
             panel1.Controls.Add(label3);
-            panel1.Location = new Point(30, 175);
+            panel1.Location = new Point(12, 175);
             panel1.Name = "panel1";
-            panel1.Size = new Size(299, 281);
+            panel1.Size = new Size(317, 281);
             panel1.TabIndex = 3;
             // 
             // btnActualizar
             // 
-            btnActualizar.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnActualizar.IconChar = FontAwesome.Sharp.IconChar.Edit;
             btnActualizar.IconColor = Color.Black;
             btnActualizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnActualizar.Location = new Point(103, 217);
+            btnActualizar.ImageAlign = ContentAlignment.TopCenter;
+            btnActualizar.Location = new Point(118, 176);
             btnActualizar.Name = "btnActualizar";
-            btnActualizar.Size = new Size(94, 29);
+            btnActualizar.Size = new Size(91, 69);
             btnActualizar.TabIndex = 4;
             btnActualizar.Text = "Actualizar";
+            btnActualizar.TextAlign = ContentAlignment.BottomCenter;
             btnActualizar.UseVisualStyleBackColor = true;
             btnActualizar.Click += btnActualizar_Click;
             // 
             // btnEliminar
             // 
-            btnEliminar.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnEliminar.IconChar = FontAwesome.Sharp.IconChar.Trash;
             btnEliminar.IconColor = Color.Black;
             btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnEliminar.Location = new Point(200, 217);
+            btnEliminar.ImageAlign = ContentAlignment.TopCenter;
+            btnEliminar.Location = new Point(217, 176);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(94, 29);
+            btnEliminar.Size = new Size(91, 70);
             btnEliminar.TabIndex = 3;
             btnEliminar.Text = "Eliminar";
+            btnEliminar.TextAlign = ContentAlignment.BottomCenter;
             btnEliminar.UseVisualStyleBackColor = true;
             btnEliminar.Click += btnEliminar_Click;
             // 
             // btnGuardar
             // 
-            btnGuardar.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnGuardar.IconChar = FontAwesome.Sharp.IconChar.Save;
             btnGuardar.IconColor = Color.Black;
             btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnGuardar.Location = new Point(3, 217);
+            btnGuardar.ImageAlign = ContentAlignment.TopCenter;
+            btnGuardar.Location = new Point(15, 175);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(94, 29);
+            btnGuardar.Size = new Size(91, 70);
             btnGuardar.TabIndex = 2;
             btnGuardar.Text = "Guardar";
+            btnGuardar.TextAlign = ContentAlignment.BottomCenter;
             btnGuardar.UseVisualStyleBackColor = true;
             btnGuardar.Click += btnGuardar_Click;
             // 
             // txtNombreCategoria
             // 
-            txtNombreCategoria.Location = new Point(8, 56);
+            txtNombreCategoria.Location = new Point(17, 59);
             txtNombreCategoria.Name = "txtNombreCategoria";
             txtNombreCategoria.Size = new Size(200, 27);
             txtNombreCategoria.TabIndex = 1;
@@ -138,7 +144,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(8, 27);
+            label3.Location = new Point(17, 27);
             label3.Name = "label3";
             label3.Size = new Size(161, 20);
             label3.TabIndex = 0;

@@ -62,31 +62,31 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(12, 12);
+            pictureBox1.Location = new Point(412, 12);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(136, 130);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.Size = new Size(170, 130);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
-            label1.ForeColor = Color.Maroon;
-            label1.Location = new Point(154, 9);
+            label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.ControlText;
+            label1.Location = new Point(588, 29);
             label1.Name = "label1";
-            label1.Size = new Size(273, 41);
+            label1.Size = new Size(254, 38);
             label1.TabIndex = 1;
             label1.Text = "Librería PrintZone";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 14F);
-            label2.Location = new Point(154, 91);
+            label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(588, 83);
             label2.Name = "label2";
-            label2.Size = new Size(304, 32);
+            label2.Size = new Size(310, 31);
             label2.TabIndex = 2;
             label2.Text = "Administración de Usuarios";
             // 
@@ -114,12 +114,11 @@
             // 
             // btnMenuPrincipal
             // 
-            btnMenuPrincipal.BackColor = Color.Brown;
-            btnMenuPrincipal.FlatStyle = FlatStyle.Flat;
+            btnMenuPrincipal.BackColor = Color.White;
             btnMenuPrincipal.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnMenuPrincipal.ForeColor = Color.White;
+            btnMenuPrincipal.ForeColor = SystemColors.ControlText;
             btnMenuPrincipal.IconChar = FontAwesome.Sharp.IconChar.ArrowRotateLeft;
-            btnMenuPrincipal.IconColor = Color.White;
+            btnMenuPrincipal.IconColor = Color.Black;
             btnMenuPrincipal.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnMenuPrincipal.ImageAlign = ContentAlignment.TopCenter;
             btnMenuPrincipal.Location = new Point(13, 474);
@@ -133,12 +132,11 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.BackColor = Color.DarkRed;
-            btnEliminar.FlatStyle = FlatStyle.Flat;
+            btnEliminar.BackColor = Color.White;
             btnEliminar.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnEliminar.ForeColor = Color.White;
+            btnEliminar.ForeColor = SystemColors.ControlText;
             btnEliminar.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            btnEliminar.IconColor = Color.White;
+            btnEliminar.IconColor = Color.Black;
             btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnEliminar.ImageAlign = ContentAlignment.TopCenter;
             btnEliminar.Location = new Point(141, 474);
@@ -152,12 +150,11 @@
             // 
             // btnGuardar
             // 
-            btnGuardar.BackColor = Color.Peru;
-            btnGuardar.FlatStyle = FlatStyle.Flat;
+            btnGuardar.BackColor = Color.White;
             btnGuardar.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnGuardar.ForeColor = Color.White;
+            btnGuardar.ForeColor = SystemColors.ControlText;
             btnGuardar.IconChar = FontAwesome.Sharp.IconChar.Save;
-            btnGuardar.IconColor = Color.White;
+            btnGuardar.IconColor = Color.Black;
             btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnGuardar.ImageAlign = ContentAlignment.TopCenter;
             btnGuardar.Location = new Point(264, 474);
@@ -172,7 +169,7 @@
             // chkActivo
             // 
             chkActivo.AutoSize = true;
-            chkActivo.Location = new Point(20, 413);
+            chkActivo.Location = new Point(20, 412);
             chkActivo.Name = "chkActivo";
             chkActivo.Size = new Size(127, 24);
             chkActivo.TabIndex = 12;
@@ -185,7 +182,7 @@
             cmbRol.FlatStyle = FlatStyle.Flat;
             cmbRol.FormattingEnabled = true;
             cmbRol.Items.AddRange(new object[] { "Administrador", "Vendedor" });
-            cmbRol.Location = new Point(20, 371);
+            cmbRol.Location = new Point(20, 353);
             cmbRol.Name = "cmbRol";
             cmbRol.Size = new Size(351, 28);
             cmbRol.TabIndex = 11;
@@ -194,7 +191,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label8.Location = new Point(20, 348);
+            label8.Location = new Point(20, 330);
             label8.Name = "label8";
             label8.Size = new Size(36, 20);
             label8.TabIndex = 10;
@@ -203,7 +200,7 @@
             // txtClave
             // 
             txtClave.BorderStyle = BorderStyle.FixedSingle;
-            txtClave.Location = new Point(20, 313);
+            txtClave.Location = new Point(20, 271);
             txtClave.Name = "txtClave";
             txtClave.Size = new Size(351, 27);
             txtClave.TabIndex = 9;
@@ -213,7 +210,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label7.Location = new Point(20, 280);
+            label7.Location = new Point(20, 248);
             label7.Name = "label7";
             label7.Size = new Size(92, 20);
             label7.TabIndex = 8;
@@ -222,7 +219,7 @@
             // txtNombreCompleto
             // 
             txtNombreCompleto.BorderStyle = BorderStyle.FixedSingle;
-            txtNombreCompleto.Location = new Point(20, 176);
+            txtNombreCompleto.Location = new Point(20, 185);
             txtNombreCompleto.Name = "txtNombreCompleto";
             txtNombreCompleto.Size = new Size(351, 27);
             txtNombreCompleto.TabIndex = 5;
@@ -231,7 +228,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label5.Location = new Point(20, 143);
+            label5.Location = new Point(20, 162);
             label5.Name = "label5";
             label5.Size = new Size(141, 20);
             label5.TabIndex = 4;

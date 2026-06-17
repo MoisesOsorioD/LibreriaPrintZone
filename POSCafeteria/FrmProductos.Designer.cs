@@ -33,7 +33,6 @@
             label2 = new Label();
             dgvProductos = new DataGridView();
             btnEliminar = new FontAwesome.Sharp.IconButton();
-            btnActualizarLista = new FontAwesome.Sharp.IconButton();
             btnGuardar = new FontAwesome.Sharp.IconButton();
             panel2 = new Panel();
             lblStockActual = new Label();
@@ -56,6 +55,7 @@
             label4 = new Label();
             label3 = new Label();
             pictureBox1 = new PictureBox();
+            label13 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
             panel2.SuspendLayout();
@@ -65,10 +65,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(454, 9);
+            label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(679, 88);
             label1.Name = "label1";
-            label1.Size = new Size(426, 41);
+            label1.Size = new Size(326, 31);
             label1.TabIndex = 0;
             label1.Text = "Administración de Productos";
             // 
@@ -78,7 +78,6 @@
             panel1.Controls.Add(label2);
             panel1.Controls.Add(dgvProductos);
             panel1.Controls.Add(btnEliminar);
-            panel1.Controls.Add(btnActualizarLista);
             panel1.Controls.Add(btnGuardar);
             panel1.Location = new Point(601, 172);
             panel1.Name = "panel1";
@@ -111,7 +110,7 @@
             btnEliminar.IconColor = Color.Black;
             btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnEliminar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEliminar.Location = new Point(485, 494);
+            btnEliminar.Location = new Point(408, 494);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(109, 50);
             btnEliminar.TabIndex = 7;
@@ -120,27 +119,13 @@
             btnEliminar.UseVisualStyleBackColor = true;
             btnEliminar.Click += btnEliminar_Click;
             // 
-            // btnActualizarLista
-            // 
-            btnActualizarLista.IconChar = FontAwesome.Sharp.IconChar.Eye;
-            btnActualizarLista.IconColor = Color.Black;
-            btnActualizarLista.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnActualizarLista.ImageAlign = ContentAlignment.MiddleLeft;
-            btnActualizarLista.Location = new Point(319, 494);
-            btnActualizarLista.Name = "btnActualizarLista";
-            btnActualizarLista.Size = new Size(160, 50);
-            btnActualizarLista.TabIndex = 6;
-            btnActualizarLista.Text = "Actualizar lista";
-            btnActualizarLista.TextAlign = ContentAlignment.MiddleRight;
-            btnActualizarLista.UseVisualStyleBackColor = true;
-            // 
             // btnGuardar
             // 
             btnGuardar.IconChar = FontAwesome.Sharp.IconChar.Pencil;
             btnGuardar.IconColor = Color.Black;
             btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnGuardar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnGuardar.Location = new Point(204, 494);
+            btnGuardar.Location = new Point(293, 494);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(109, 50);
             btnGuardar.TabIndex = 5;
@@ -346,12 +331,22 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.logo;
-            pictureBox1.Location = new Point(12, 9);
+            pictureBox1.Location = new Point(501, 12);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(298, 143);
+            pictureBox1.Size = new Size(172, 143);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label13.Location = new Point(679, 33);
+            label13.Name = "label13";
+            label13.Size = new Size(254, 38);
+            label13.TabIndex = 6;
+            label13.Text = "Librería PrintZone";
             // 
             // FrmProductos
             // 
@@ -359,6 +354,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Linen;
             ClientSize = new Size(1374, 778);
+            Controls.Add(label13);
             Controls.Add(pictureBox1);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -382,7 +378,6 @@
         private Panel panel1;
         private FontAwesome.Sharp.IconButton btnGuardar;
         private FontAwesome.Sharp.IconButton btnEliminar;
-        private FontAwesome.Sharp.IconButton btnActualizarLista;
         private DataGridView dgvProductos;
         private Panel panel2;
         private Label label2;
@@ -406,5 +401,6 @@
         private Label label12;
         private PictureBox pictureBox1;
         private Label lblStockActual;
+        private Label label13;
     }
 }

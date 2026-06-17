@@ -49,7 +49,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Maroon;
+            label1.ForeColor = SystemColors.ControlText;
             label1.Location = new Point(17, 125);
             label1.Name = "label1";
             label1.Size = new Size(254, 38);
@@ -60,7 +60,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            label2.ForeColor = Color.Maroon;
+            label2.ForeColor = SystemColors.ControlText;
             label2.Location = new Point(158, 39);
             label2.Name = "label2";
             label2.Size = new Size(187, 37);
@@ -118,11 +118,10 @@
             // 
             // btnIngresar
             // 
-            btnIngresar.BackColor = Color.SaddleBrown;
-            btnIngresar.FlatStyle = FlatStyle.Flat;
-            btnIngresar.ForeColor = Color.White;
+            btnIngresar.BackColor = Color.White;
+            btnIngresar.ForeColor = Color.Black;
             btnIngresar.IconChar = FontAwesome.Sharp.IconChar.ArrowRight;
-            btnIngresar.IconColor = Color.White;
+            btnIngresar.IconColor = Color.Black;
             btnIngresar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnIngresar.ImageAlign = ContentAlignment.MiddleLeft;
             btnIngresar.Location = new Point(276, 313);
@@ -135,11 +134,10 @@
             // 
             // btnSalir
             // 
-            btnSalir.BackColor = Color.Crimson;
-            btnSalir.FlatStyle = FlatStyle.Flat;
-            btnSalir.ForeColor = Color.White;
+            btnSalir.BackColor = Color.White;
+            btnSalir.ForeColor = Color.Black;
             btnSalir.IconChar = FontAwesome.Sharp.IconChar.Close;
-            btnSalir.IconColor = Color.White;
+            btnSalir.IconColor = Color.Black;
             btnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnSalir.ImageAlign = ContentAlignment.MiddleLeft;
             btnSalir.Location = new Point(58, 315);

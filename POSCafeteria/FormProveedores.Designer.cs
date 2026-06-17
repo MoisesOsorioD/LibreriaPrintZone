@@ -256,40 +256,46 @@
             // 
             // btnActualizar
             // 
-            btnActualizar.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnActualizar.IconChar = FontAwesome.Sharp.IconChar.Edit;
             btnActualizar.IconColor = Color.Black;
             btnActualizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnActualizar.Location = new Point(323, 533);
+            btnActualizar.ImageAlign = ContentAlignment.TopCenter;
+            btnActualizar.Location = new Point(323, 512);
             btnActualizar.Name = "btnActualizar";
-            btnActualizar.Size = new Size(94, 29);
+            btnActualizar.Size = new Size(86, 70);
             btnActualizar.TabIndex = 4;
             btnActualizar.Text = "Actualizar";
+            btnActualizar.TextAlign = ContentAlignment.BottomCenter;
             btnActualizar.UseVisualStyleBackColor = true;
             btnActualizar.Click += btnActualizar_Click;
             // 
             // btnEliminar
             // 
-            btnEliminar.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnEliminar.IconChar = FontAwesome.Sharp.IconChar.Trash;
             btnEliminar.IconColor = Color.Black;
             btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnEliminar.Location = new Point(423, 533);
+            btnEliminar.ImageAlign = ContentAlignment.TopCenter;
+            btnEliminar.Location = new Point(428, 512);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(94, 29);
+            btnEliminar.Size = new Size(86, 70);
             btnEliminar.TabIndex = 3;
             btnEliminar.Text = "Eliminar";
+            btnEliminar.TextAlign = ContentAlignment.BottomCenter;
             btnEliminar.UseVisualStyleBackColor = true;
             btnEliminar.Click += btnEliminar_Click;
             // 
             // btnGuardar
             // 
-            btnGuardar.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnGuardar.IconChar = FontAwesome.Sharp.IconChar.Save;
             btnGuardar.IconColor = Color.Black;
             btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnGuardar.Location = new Point(223, 535);
+            btnGuardar.ImageAlign = ContentAlignment.TopCenter;
+            btnGuardar.Location = new Point(217, 512);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(94, 29);
+            btnGuardar.Size = new Size(86, 70);
             btnGuardar.TabIndex = 2;
             btnGuardar.Text = "Guardar";
+            btnGuardar.TextAlign = ContentAlignment.BottomCenter;
             btnGuardar.UseVisualStyleBackColor = true;
             btnGuardar.Click += btnGuardar_Click;
             // 

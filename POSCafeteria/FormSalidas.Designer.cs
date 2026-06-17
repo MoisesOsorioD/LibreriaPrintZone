@@ -244,24 +244,26 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.ForeColor = SystemColors.ControlText;
             label7.Location = new Point(448, 34);
             label7.Name = "label7";
-            label7.Size = new Size(273, 41);
+            label7.Size = new Size(254, 38);
             label7.TabIndex = 0;
             label7.Text = "Librería PrintZone";
             // 
             // btnRegresar
             // 
-            btnRegresar.IconChar = FontAwesome.Sharp.IconChar.None;
+            btnRegresar.IconChar = FontAwesome.Sharp.IconChar.ArrowRotateLeft;
             btnRegresar.IconColor = Color.Black;
             btnRegresar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnRegresar.Location = new Point(965, 34);
+            btnRegresar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnRegresar.Location = new Point(917, 32);
             btnRegresar.Name = "btnRegresar";
-            btnRegresar.Size = new Size(94, 29);
+            btnRegresar.Size = new Size(113, 53);
             btnRegresar.TabIndex = 14;
             btnRegresar.Text = "Regresar";
+            btnRegresar.TextAlign = ContentAlignment.MiddleRight;
             btnRegresar.UseVisualStyleBackColor = true;
             btnRegresar.Click += btnRegresar_Click;
             // 

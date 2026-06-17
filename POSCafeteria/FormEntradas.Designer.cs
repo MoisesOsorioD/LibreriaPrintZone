@@ -56,7 +56,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(430, 83);
+            label1.Location = new Point(493, 83);
             label1.Name = "label1";
             label1.Size = new Size(373, 31);
             label1.TabIndex = 0;
@@ -195,9 +195,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.logo;
-            pictureBox1.Location = new Point(253, 12);
+            pictureBox1.Location = new Point(316, 12);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(171, 114);
+            pictureBox1.Size = new Size(171, 129);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 8;
             pictureBox1.TabStop = false;
@@ -234,11 +234,11 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = SystemColors.ControlText;
-            label6.Location = new Point(430, 22);
+            label6.Location = new Point(493, 22);
             label6.Name = "label6";
-            label6.Size = new Size(273, 41);
+            label6.Size = new Size(254, 38);
             label6.TabIndex = 9;
             label6.Text = "Librería PrintZone";
             // 
