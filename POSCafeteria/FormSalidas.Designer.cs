@@ -258,11 +258,11 @@
             btnRegresar.IconColor = Color.Black;
             btnRegresar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnRegresar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnRegresar.Location = new Point(917, 32);
+            btnRegresar.Location = new Point(935, 34);
             btnRegresar.Name = "btnRegresar";
-            btnRegresar.Size = new Size(113, 53);
+            btnRegresar.Size = new Size(95, 53);
             btnRegresar.TabIndex = 14;
-            btnRegresar.Text = "Regresar";
+            btnRegresar.Text = "Inicio";
             btnRegresar.TextAlign = ContentAlignment.MiddleRight;
             btnRegresar.UseVisualStyleBackColor = true;
             btnRegresar.Click += btnRegresar_Click;

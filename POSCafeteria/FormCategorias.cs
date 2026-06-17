@@ -26,6 +26,11 @@ namespace Printzone
 
             dgvCategorias.DataSource =
                 categoriaBLL.ObtenerCategorias();
+
+            dgvCategorias.Columns["id_categoria"].Width = 120;
+
+            dgvCategorias.Columns["nombre_categoria"].AutoSizeMode =
+                DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void FormCategorias_Load(object sender, EventArgs e)
@@ -188,6 +193,11 @@ namespace Printzone
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

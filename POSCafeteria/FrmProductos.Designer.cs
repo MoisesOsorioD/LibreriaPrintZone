@@ -56,6 +56,7 @@
             label3 = new Label();
             pictureBox1 = new PictureBox();
             label13 = new Label();
+            btnRegresar = new FontAwesome.Sharp.IconButton();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
             panel2.SuspendLayout();
@@ -348,12 +349,28 @@
             label13.TabIndex = 6;
             label13.Text = "Librería PrintZone";
             // 
+            // btnRegresar
+            // 
+            btnRegresar.IconChar = FontAwesome.Sharp.IconChar.ArrowRotateLeft;
+            btnRegresar.IconColor = Color.Black;
+            btnRegresar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnRegresar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnRegresar.Location = new Point(1263, 33);
+            btnRegresar.Name = "btnRegresar";
+            btnRegresar.Size = new Size(99, 58);
+            btnRegresar.TabIndex = 7;
+            btnRegresar.Text = "Inicio";
+            btnRegresar.TextAlign = ContentAlignment.MiddleRight;
+            btnRegresar.UseVisualStyleBackColor = true;
+            btnRegresar.Click += btnRegresar_Click;
+            // 
             // FrmProductos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Linen;
-            ClientSize = new Size(1374, 778);
+            ClientSize = new Size(1377, 778);
+            Controls.Add(btnRegresar);
             Controls.Add(label13);
             Controls.Add(pictureBox1);
             Controls.Add(panel2);
@@ -402,5 +419,6 @@
         private PictureBox pictureBox1;
         private Label lblStockActual;
         private Label label13;
+        private FontAwesome.Sharp.IconButton btnRegresar;
     }
 }

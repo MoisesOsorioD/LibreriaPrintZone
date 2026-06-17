@@ -150,6 +150,22 @@ namespace Printzone
             dgvEntradas.Columns["nombre_producto"].HeaderText = "Producto";
             dgvEntradas.Columns["nombre_proveedor"].HeaderText = "Proveedor";
 
+
+            dgvEntradas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+
+            dgvEntradas.Columns["fecha_entrada"].Width = 120;
+            dgvEntradas.Columns["cantidad"].Width = 80;
+            dgvEntradas.Columns["costo_lote"].Width = 100;
+            dgvEntradas.Columns["nombre_producto"].Width = 150;
+
+            dgvEntradas.Columns["nombre_proveedor"].AutoSizeMode =
+                DataGridViewAutoSizeColumnMode.Fill;
+
+        }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -62,9 +62,24 @@ namespace Printzone.DAL
 
             using (SqlConnection conexion = ConexionDB.ObtenerConexion())
             {
-                string consulta = @"SELECT *
-                    FROM Productos
-                    WHERE activo = 1";
+                string consulta = @"
+                    SELECT
+                        p.id_producto,
+                        p.nombre,
+                        p.descripcion,
+                        p.marca,
+                        p.precio_compra,
+                        p.precio_venta,
+                        p.codigo_barras,
+                        p.stock_actual,
+                        p.stock_minimo,
+                        p.id_categoria,
+                        p.activo,
+                        c.nombre_categoria
+                    FROM Productos p
+                    INNER JOIN Categorias c
+                        ON p.id_categoria = c.id_categoria
+                    WHERE p.activo = 1";
 
                 SqlCommand comando = new SqlCommand(consulta, conexion);
 
@@ -87,6 +102,7 @@ namespace Printzone.DAL
                     producto.stock_minimo = (int)reader["stock_minimo"];
                     producto.id_categoria = (int)reader["id_categoria"];
                     producto.activo = (bool)reader["activo"];
+                    producto.nombre_categoria = reader["nombre_categoria"].ToString();
 
                     lista.Add(producto);
                 }

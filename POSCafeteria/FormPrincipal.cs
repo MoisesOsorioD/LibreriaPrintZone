@@ -62,30 +62,35 @@ namespace Printzone
 
         private void btnProductos_Click(object sender, EventArgs e)
         {
-            FrmProductos frmProductos =
-        new FrmProductos(_usuarioSesion);
+            this.Hide();
+
+            FrmProductos frmProductos = new FrmProductos(_usuarioSesion);
 
             frmProductos.ShowDialog();
+
+            this.Show();
         }
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FormUsuarios formUsuarios = new FormUsuarios(_usuarioSesion);
             formUsuarios.ShowDialog();
+            this.Show();
         }
 
         private void btnEntradas_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FormEntradas formEntradas = new FormEntradas();
             formEntradas.ShowDialog();
+            this.Show();
         }
 
         private void btnSalidas_Click(object sender, EventArgs e)
         {
-            FormSalidas frmSalidas = new FormSalidas(_usuarioSesion, this);
-
             this.Hide();
-
+            FormSalidas frmSalidas = new FormSalidas(_usuarioSesion, this);
             frmSalidas.ShowDialog();
 
             this.Show();
@@ -93,14 +98,21 @@ namespace Printzone
 
         private void btnCategorias_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FormCategorias frmcategorias = new FormCategorias();
             frmcategorias.ShowDialog();
+            this.Show();
         }
 
         private void btnProveedores_Click(object sender, EventArgs e)
         {
+            this.Hide();
+
             FormProveedores frmProveedores = new FormProveedores();
+
             frmProveedores.ShowDialog();
+
+            this.Show();
         }
 
 

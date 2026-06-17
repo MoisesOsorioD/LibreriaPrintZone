@@ -46,6 +46,7 @@
             panel2 = new Panel();
             label7 = new Label();
             label6 = new Label();
+            btnRegresar = new FontAwesome.Sharp.IconButton();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvEntradas).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -242,12 +243,28 @@
             label6.TabIndex = 9;
             label6.Text = "Librería PrintZone";
             // 
+            // btnRegresar
+            // 
+            btnRegresar.IconChar = FontAwesome.Sharp.IconChar.ArrowRotateLeft;
+            btnRegresar.IconColor = Color.Black;
+            btnRegresar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnRegresar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnRegresar.Location = new Point(1040, 22);
+            btnRegresar.Name = "btnRegresar";
+            btnRegresar.Size = new Size(95, 54);
+            btnRegresar.TabIndex = 10;
+            btnRegresar.Text = "Inicio";
+            btnRegresar.TextAlign = ContentAlignment.MiddleRight;
+            btnRegresar.UseVisualStyleBackColor = true;
+            btnRegresar.Click += btnRegresar_Click;
+            // 
             // FormEntradas
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Linen;
             ClientSize = new Size(1151, 693);
+            Controls.Add(btnRegresar);
             Controls.Add(pictureBox1);
             Controls.Add(label6);
             Controls.Add(panel2);
@@ -286,5 +303,6 @@
         private DataGridView dgvEntradas;
         private Label label7;
         private Label label8;
+        private FontAwesome.Sharp.IconButton btnRegresar;
     }
 }

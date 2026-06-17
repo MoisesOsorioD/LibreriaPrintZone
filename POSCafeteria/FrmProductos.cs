@@ -40,6 +40,12 @@ namespace Printzone
             ProductoBLL productoBLL = new ProductoBLL();
 
             dgvProductos.DataSource = productoBLL.ObtenerProductos();
+
+            dgvProductos.Columns["id_categoria"].Visible = false;
+            dgvProductos.Columns["activo"].Visible = false;
+
+            dgvProductos.Columns["nombre_categoria"].HeaderText = "Categoría";
+
         }
 
         private void FrmProductos_Load(object sender, EventArgs e)
@@ -239,6 +245,11 @@ namespace Printzone
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
+        }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

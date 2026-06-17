@@ -53,6 +53,7 @@
             btnGuardar = new FontAwesome.Sharp.IconButton();
             label11 = new Label();
             dgvProveedores = new DataGridView();
+            btnRegresar = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -319,12 +320,28 @@
             dgvProveedores.TabIndex = 0;
             dgvProveedores.CellContentClick += dgvProveedores_CellContentClick;
             // 
+            // btnRegresar
+            // 
+            btnRegresar.IconChar = FontAwesome.Sharp.IconChar.ArrowRotateLeft;
+            btnRegresar.IconColor = Color.Black;
+            btnRegresar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnRegresar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnRegresar.Location = new Point(996, 37);
+            btnRegresar.Name = "btnRegresar";
+            btnRegresar.Size = new Size(98, 50);
+            btnRegresar.TabIndex = 5;
+            btnRegresar.Text = "Inicio";
+            btnRegresar.TextAlign = ContentAlignment.MiddleRight;
+            btnRegresar.UseVisualStyleBackColor = true;
+            btnRegresar.Click += btnRegresar_Click;
+            // 
             // FormProveedores
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Linen;
             ClientSize = new Size(1109, 782);
+            Controls.Add(btnRegresar);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(label2);
@@ -370,5 +387,6 @@
         private FontAwesome.Sharp.IconButton btnEliminar;
         private FontAwesome.Sharp.IconButton btnGuardar;
         private FontAwesome.Sharp.IconButton btnActualizar;
+        private FontAwesome.Sharp.IconButton btnRegresar;
     }
 }

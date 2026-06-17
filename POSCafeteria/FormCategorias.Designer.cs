@@ -39,6 +39,7 @@
             label3 = new Label();
             panel2 = new Panel();
             dgvCategorias = new DataGridView();
+            btnRegresar = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -48,7 +49,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.logo;
-            pictureBox1.Location = new Point(172, 12);
+            pictureBox1.Location = new Point(131, 12);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(175, 157);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -59,7 +60,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(357, 25);
+            label1.Location = new Point(312, 28);
             label1.Name = "label1";
             label1.Size = new Size(254, 38);
             label1.TabIndex = 1;
@@ -69,7 +70,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(357, 94);
+            label2.Location = new Point(312, 93);
             label2.Name = "label2";
             label2.Size = new Size(330, 31);
             label2.TabIndex = 2;
@@ -169,12 +170,28 @@
             dgvCategorias.TabIndex = 0;
             dgvCategorias.CellClick += dgvCategorias_CellClick;
             // 
+            // btnRegresar
+            // 
+            btnRegresar.IconChar = FontAwesome.Sharp.IconChar.ArrowRotateLeft;
+            btnRegresar.IconColor = Color.Black;
+            btnRegresar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnRegresar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnRegresar.Location = new Point(699, 28);
+            btnRegresar.Name = "btnRegresar";
+            btnRegresar.Size = new Size(94, 55);
+            btnRegresar.TabIndex = 5;
+            btnRegresar.Text = "Inicio";
+            btnRegresar.TextAlign = ContentAlignment.MiddleRight;
+            btnRegresar.UseVisualStyleBackColor = true;
+            btnRegresar.Click += btnRegresar_Click;
+            // 
             // FormCategorias
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Linen;
-            ClientSize = new Size(772, 476);
+            ClientSize = new Size(805, 476);
+            Controls.Add(btnRegresar);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
@@ -205,5 +222,6 @@
         private Panel panel2;
         private DataGridView dgvCategorias;
         private FontAwesome.Sharp.IconButton btnActualizar;
+        private FontAwesome.Sharp.IconButton btnRegresar;
     }
 }
